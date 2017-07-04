@@ -1,0 +1,2 @@
+# NChart
+NodeJS chart engine.
