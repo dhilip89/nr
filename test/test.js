@@ -1,12 +1,13 @@
-var fs = require('fs');
-var zrender = require('../lib/zrender/src/zrender');
-var Canvas = require('canvas/lib/canvas')
-  , canvas = new Canvas(500, 500)
-  , ctx = canvas.getContext('2d');
+import NRenderer from '../src/nrenderer';
+import Nfs from '../src/io/nfs';
 
-ctx.fillStyle = 'red';
-ctx.beginPath();
-ctx.arc(100, 100, 30, 0, Math.PI * 2);
-ctx.closePath()
-ctx.fill();
-canvas.pngStream().pipe(fs.createWriteStream('./test.png'));
+let nr = new NRenderer({
+    width: 300,
+    height: 300
+});
+
+let context = nr.getContext();
+context.arc(100, 100, 30, 0, 2*Math.PI);
+context.fillStyle='red';
+context.fill();
+Nfs.saveAsPNG(nr.getCanvas(), './test/test.png');

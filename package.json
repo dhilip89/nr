@@ -4,7 +4,8 @@
   "description": "NodeJS chart engine.",
   "main": "index.js",
   "scripts": {
-    "test": "webpack --watch --config test.webpack.config.js"
+    "test": "webpack --watch --config test.webpack.config.js",
+    "start": "nodemon ./test/dist/bundle.js"
   },
   "repository": {
     "type": "git",
