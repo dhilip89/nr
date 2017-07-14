@@ -1,5 +1,12 @@
+import Storage from './storage';
+import Painter from './painter';
+
 import Canvas from 'canvas/lib/canvas';
 
+/**
+ * @author yuanzhaokang <kangzhaoyuan@gmail.com>
+ * NodeJS graphic render.
+ */
 export default class NRenderer {
     constructor(opts) {
         this.width = opts['width'] || 300;
@@ -7,17 +14,24 @@ export default class NRenderer {
 
         this.canvas = null;
         this.context = null;
-
         this.shapes = [];
+
+        this.storage = new Storage();
+        this.painter = new Painter(this.context);
+    }
+
+    /**
+     * Init canvas and graphic context.
+     */
+    init() {
+        this.canvas = new Canvas(this.width, this.height);
+        this.context = this.canvas.getContext('2d');
     }
 
     /**
      * Get canvas 2d context.
      */
     getContext() {
-        this.canvas = new Canvas(this.width, this.height);
-        this.context = this.canvas.getContext('2d');
-
         return this.context;
     }
 
@@ -44,7 +58,7 @@ export default class NRenderer {
 
     /**
      * Set canvas width.
-     * @param {* Number} width 
+     * @param {Number} width 
      */
     setWidth(width) {
         this.width = width;
@@ -52,7 +66,7 @@ export default class NRenderer {
 
     /**
      * Set canvas height.
-     * @param {*Number} height 
+     * @param {Number} height 
      */
     setHeight(height) {
         this.height = height;
@@ -60,17 +74,24 @@ export default class NRenderer {
 
     /**
      * Add shape to nrenderer to render them.
-     * @param {* Shape} shape 
+     * @param {Shape} shape 
      */
     add(shape) {
-        
+        this.storage.add(shape);
     }
 
     /**
      * Remove shape from nrenderer.
-     * @param {* Shape} shape 
+     * @param {Shape} shape 
      */
     remove(shape) {
-        
+        this.storage.remove(shape);
+    }
+
+    /**
+     * Repaint the canvas.
+     */
+    repaint() {
+
     }
 }
