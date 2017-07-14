@@ -19,9 +19,16 @@ export default class Painter {
      * @param {Shape} shape 
      */
     paint(shape) {
-        let shapeStyle = shape.getStyle();
+        let shapeStyle = shape.opts.style;
         let style = new Style(shapeStyle);
         style.bind(this.context); // bind style to context.
         shape.buildPath(this.context); // paint base shape.
+    }
+
+    /**
+     * Clear canvas.
+     */
+    clear(x, y, width, height) {
+        this.context.clearRect(x, y, width, height);
     }
 }

@@ -69,8 +69,8 @@
 
 var isFunction = __webpack_require__(1);
 var isNil = __webpack_require__(7);
-var fail = __webpack_require__(39);
-var stringify = __webpack_require__(23);
+var fail = __webpack_require__(45);
+var stringify = __webpack_require__(22);
 
 function assert(guard, message) {
   if (guard !== true) {
@@ -196,10 +196,10 @@ module.exports = function isNil(x) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var isType = __webpack_require__(4);
-var isStruct = __webpack_require__(30);
+var isStruct = __webpack_require__(29);
 var getFunctionName = __webpack_require__(14);
 var assert = __webpack_require__(0);
-var stringify = __webpack_require__(23);
+var stringify = __webpack_require__(22);
 
 // creates an instance of a type, handling the optional new operator
 module.exports = function create(type, value, path) {
@@ -248,7 +248,7 @@ module.exports = function isObject(x) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
-var Boolean = __webpack_require__(24);
+var Boolean = __webpack_require__(23);
 var isType = __webpack_require__(4);
 var getTypeName = __webpack_require__(2);
 
@@ -321,7 +321,7 @@ module.exports = function mixin(target, source, overwrite) {
 "use strict";
 
 
-module.exports = __webpack_require__(36);
+module.exports = __webpack_require__(42);
 
 
 /***/ }),
@@ -351,12 +351,6 @@ module.exports = require("stream");
 
 /***/ }),
 /* 20 */
-/***/ (function(module, exports) {
-
-module.exports = require("fs");
-
-/***/ }),
-/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -378,9 +372,9 @@ var canvas = __webpack_require__(16)
   , CanvasPattern = canvas.CanvasPattern
   , ImageData = canvas.ImageData;
 
-var parseCssFont = __webpack_require__(38);
+var parseCssFont = __webpack_require__(44);
 
-var unitsCss = __webpack_require__(67);
+var unitsCss = __webpack_require__(73);
 
 /**
  * Export `Context2d` as the module.
@@ -729,7 +723,7 @@ Context2d.prototype.createImageData = function(width, height){
 
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*! @preserve
@@ -745,16 +739,16 @@ var t = __webpack_require__(0);
 
 // types
 t.Any = __webpack_require__(17);
-t.Array = __webpack_require__(40);
-t.Boolean = __webpack_require__(24);
-t.Date = __webpack_require__(41);
-t.Error = __webpack_require__(42);
+t.Array = __webpack_require__(46);
+t.Boolean = __webpack_require__(23);
+t.Date = __webpack_require__(47);
+t.Error = __webpack_require__(48);
 t.Function = __webpack_require__(18);
-t.Nil = __webpack_require__(26);
-t.Number = __webpack_require__(43);
-t.Object = __webpack_require__(44);
-t.RegExp = __webpack_require__(45);
-t.String = __webpack_require__(28);
+t.Nil = __webpack_require__(25);
+t.Number = __webpack_require__(49);
+t.Object = __webpack_require__(50);
+t.RegExp = __webpack_require__(51);
+t.String = __webpack_require__(27);
 
 // short alias are deprecated
 t.Arr = t.Array;
@@ -768,34 +762,34 @@ t.Re = t.RegExp;
 t.Str = t.String;
 
 // combinators
-t.dict = __webpack_require__(29);
-t.declare = __webpack_require__(46);
-t.enums = __webpack_require__(47);
+t.dict = __webpack_require__(28);
+t.declare = __webpack_require__(52);
+t.enums = __webpack_require__(53);
 t.irreducible = __webpack_require__(3);
-t.list = __webpack_require__(31);
-t.maybe = __webpack_require__(48);
-t.refinement = __webpack_require__(50);
-t.struct = __webpack_require__(51);
-t.tuple = __webpack_require__(32);
-t.union = __webpack_require__(52);
-t.func = __webpack_require__(54);
-t.intersection = __webpack_require__(55);
+t.list = __webpack_require__(30);
+t.maybe = __webpack_require__(54);
+t.refinement = __webpack_require__(56);
+t.struct = __webpack_require__(57);
+t.tuple = __webpack_require__(31);
+t.union = __webpack_require__(58);
+t.func = __webpack_require__(60);
+t.intersection = __webpack_require__(61);
 t.subtype = t.refinement;
 
 // functions
 t.assert = t;
-t.update = __webpack_require__(56);
+t.update = __webpack_require__(62);
 t.mixin = __webpack_require__(15);
 t.isType = __webpack_require__(4);
 t.is = __webpack_require__(9);
 t.getTypeName = __webpack_require__(2);
-t.match = __webpack_require__(57);
+t.match = __webpack_require__(63);
 
 module.exports = t;
 
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports) {
 
 module.exports = function stringify(x) {
@@ -808,17 +802,17 @@ module.exports = function stringify(x) {
 };
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
-var isBoolean = __webpack_require__(25);
+var isBoolean = __webpack_require__(24);
 
 module.exports = irreducible('Boolean', isBoolean);
 
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports = function isBoolean(x) {
@@ -826,7 +820,7 @@ module.exports = function isBoolean(x) {
 };
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
@@ -836,7 +830,7 @@ module.exports = irreducible('Nil', isNil);
 
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports) {
 
 module.exports = function isNumber(x) {
@@ -844,7 +838,7 @@ module.exports = function isNumber(x) {
 };
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
@@ -854,7 +848,7 @@ module.exports = irreducible('String', isString);
 
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -955,7 +949,7 @@ module.exports = dict;
 
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isType = __webpack_require__(4);
@@ -965,7 +959,7 @@ module.exports = function isStruct(x) {
 };
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -1052,7 +1046,7 @@ module.exports = list;
 
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -1140,7 +1134,7 @@ tuple.getDefaultName = getDefaultName;
 module.exports = tuple;
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1279,29 +1273,367 @@ module.exports = utilities;
 
 
 /***/ }),
+/* 33 */
+/***/ (function(module, exports) {
+
+module.exports = require("fs");
+
+/***/ }),
 /* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_nrenderer__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_io_nfs__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_graphic_shape_circle__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_nrenderer__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_io_nfs__ = __webpack_require__(86);
 
 
 
-let nr = new __WEBPACK_IMPORTED_MODULE_0__src_nrenderer__["a" /* default */]({
+
+let nr = new __WEBPACK_IMPORTED_MODULE_1__src_nrenderer__["a" /* default */]({
     width: 300,
     height: 300
 });
+nr.init();
 
-let context = nr.getContext();
-context.arc(100, 100, 30, 0, 2 * Math.PI);
-context.fillStyle = 'red';
-context.fill();
-__WEBPACK_IMPORTED_MODULE_1__src_io_nfs__["a" /* default */].saveAsPNG(nr.getCanvas(), './test/test.png');
+let c = new __WEBPACK_IMPORTED_MODULE_0__src_graphic_shape_circle__["a" /* default */]({
+    shape: {
+        cx: 100,
+        cy: 100,
+        r: 20
+    },
+    style: {
+        fillStyle: 'blue',
+        strokeStyle: 'orange',
+        lineWidth: 3
+    }
+});
+
+nr.add(c);
+
+c = new __WEBPACK_IMPORTED_MODULE_0__src_graphic_shape_circle__["a" /* default */]({
+    shape: {
+        cx: 120,
+        cy: 120,
+        r: 20
+    },
+    style: {
+        fillStyle: 'blue',
+        strokeStyle: 'orange',
+        lineWidth: 3
+    }
+});
+
+nr.add(c);
+nr.paint();
+
+__WEBPACK_IMPORTED_MODULE_2__src_io_nfs__["a" /* default */].saveAsPNG(nr.getCanvas(), './test/test.png');
 
 /***/ }),
 /* 35 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(36);
+
+
+/**
+ * @author yuanzhaokang <kangzhaoyuan@gmail.com>
+ * Circle shape.
+ */
+class Circle extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
+    constructor(opts) {
+        super(opts);
+    }
+
+    buildPath(context) {
+        context.beginPath();
+        let shape = this.opts.shape;
+        context.arc(shape.cx, shape.cy, shape.r, 0, 2 * Math.PI, true);
+        context.fill();
+        context.stroke();
+        context.closePath();
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Circle;
+
+
+/***/ }),
+/* 36 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/**
+ * @author yuanzhaokang <kangzhaoyuan@gmail.com>
+ * Base shape.
+ */
+class Shape {
+    constructor(opts) {
+        this.opts = opts;
+    }
+
+    buildPath(context) {}
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Shape;
+
+
+/***/ }),
+/* 37 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__storage__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__painter__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_canvas_lib_canvas__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_canvas_lib_canvas___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_canvas_lib_canvas__);
+
+
+
+
+
+/**
+ * @author yuanzhaokang <kangzhaoyuan@gmail.com>
+ * NodeJS graphic render.
+ */
+class NRenderer {
+    constructor(opts) {
+        this.width = opts['width'] || 300;
+        this.height = opts['height'] || 150;
+
+        this.canvas = null;
+        this.context = null;
+        this.shapes = [];
+
+        this.painter = null;
+        this.storage = new __WEBPACK_IMPORTED_MODULE_0__storage__["a" /* default */]();
+    }
+
+    /**
+     * Init canvas and graphic context.
+     */
+    init() {
+        this.canvas = new __WEBPACK_IMPORTED_MODULE_2_canvas_lib_canvas___default.a(this.width, this.height);
+        this.context = this.canvas.getContext('2d');
+        this.painter = new __WEBPACK_IMPORTED_MODULE_1__painter__["a" /* default */](this.context);
+    }
+
+    /**
+     * Get canvas 2d context.
+     */
+    getContext() {
+        return this.context;
+    }
+
+    /**
+     * Get canvas. for example, if you want to write it to file, you can use it to get canvas.
+     */
+    getCanvas() {
+        return this.canvas;
+    }
+
+    /**
+     * Get canvas width.
+     */
+    getWidth() {
+        return this.width;
+    }
+
+    /**
+     * Get canvas height;
+     */
+    getHeight() {
+        return this.height;
+    }
+
+    /**
+     * Set canvas width.
+     * @param {Number} width 
+     */
+    setWidth(width) {
+        this.width = width;
+    }
+
+    /**
+     * Set canvas height.
+     * @param {Number} height 
+     */
+    setHeight(height) {
+        this.height = height;
+    }
+
+    /**
+     * Add shape to nrenderer to render them.
+     * @param {Shape} shape 
+     */
+    add(shape) {
+        this.storage.add(shape);
+    }
+
+    /**
+     * Remove shape from nrenderer.
+     * @param {Shape} shape 
+     */
+    remove(shape) {
+        this.storage.remove(shape);
+    }
+
+    /**
+     * paint all shapes.
+     */
+    paint() {
+        for (let i = 0; i < this.storage.count(); i++) {
+            this.painter.paint(this.storage.get(i));
+        }
+    }
+
+    /**
+     * Clear canvas.
+     * @param {Number} x 
+     * @param {Number} y 
+     * @param {Number} width 
+     * @param {Number} height 
+     */
+    clear(x, y, width, height) {
+        this.painter.clear(x, y, width, height);
+    }
+
+    /**
+     * Clear all the canvas.
+     */
+    clearAll() {
+        this.clear(0, 0, this.width, this.height);
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = NRenderer;
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/**
+ * @author yuanzhaokang <kangzhaoyuan@gmail.com>
+ * Storage is the save manager of NRender.
+ */
+class Storage {
+    constructor() {
+        this.shapes = []; // Save all the base shapes.
+    }
+
+    /**
+     * Add shape to storage.
+     * @param {Shape} shape 
+     */
+    add(shape) {
+        this.shapes.push(shape);
+    }
+
+    /**
+     * Get shape from storage.
+     * @param {Number} i 
+     */
+    get(i) {
+        return this.shapes[i];
+    }
+
+    getAll() {
+        return this.shapes;
+    }
+
+    /**
+     * Remove shape from storage.
+     * @param {Shape} shape 
+     */
+    remove(shape) {
+        let index = this.shapes.indexOf(shape);
+
+        if (index != -1) {
+            this.shapes.splice(index, 1);
+        }
+    }
+
+    /**
+     * Get the size of shapes.
+     */
+    count() {
+        return this.shapes.length;
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Storage;
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__graphic_style__ = __webpack_require__(40);
+
+
+
+/**
+ * @author yuanzhaokang <kangzhaoyuan@gmail.com>
+ * Paint the base shape.
+ */
+class Painter {
+  /**
+   * Constructor.
+   * @param {Canvas2DContext} context 
+   */
+  constructor(context) {
+    this.context = context;
+  }
+
+  /**
+   * Paint base shape to canvas.
+   * @param {Shape} shape 
+   */
+  paint(shape) {
+    let shapeStyle = shape.opts.style;
+    let style = new __WEBPACK_IMPORTED_MODULE_0__graphic_style__["a" /* default */](shapeStyle);
+    style.bind(this.context); // bind style to context.
+    shape.buildPath(this.context); // paint base shape.
+  }
+
+  /**
+   * Clear canvas.
+   */
+  clear(x, y, width, height) {
+    this.context.clearRect(x, y, width, height);
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Painter;
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/**
+ * @author yuanzhaokang <kangzhaoyuan@gmail.com>
+ * Process about style and bind style to Canvas2DContext.
+ */
+class Style {
+    constructor(style) {
+        this.style = style;
+    }
+
+    bind(context) {
+        let styleName = Object.keys(this.style);
+
+        for (let i = 0; i < styleName.length; i++) {
+            context[styleName[i]] = this.style[styleName[i]];
+        }
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Style;
+
+
+/***/ }),
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1321,13 +1653,13 @@ var canvas = __webpack_require__(16)
   , Canvas = canvas.Canvas
   , Image = canvas.Image
   , cairoVersion = canvas.cairoVersion
-  , Context2d = __webpack_require__(21)
-  , PNGStream = __webpack_require__(75)
-  , PDFStream = __webpack_require__(76)
-  , JPEGStream = __webpack_require__(77)
+  , Context2d = __webpack_require__(20)
+  , PNGStream = __webpack_require__(81)
+  , PDFStream = __webpack_require__(82)
+  , JPEGStream = __webpack_require__(83)
   , FontFace = canvas.FontFace
-  , fs = __webpack_require__(20)
-  , packageJson = __webpack_require__(78)
+  , fs = __webpack_require__(33)
+  , packageJson = __webpack_require__(84)
   , FORMATS = ['image/png', 'image/jpeg'];
 
 /**
@@ -1410,13 +1742,13 @@ if (FontFace) {
  * Context2d implementation.
  */
 
-__webpack_require__(21);
+__webpack_require__(20);
 
 /**
  * Image implementation.
  */
 
-__webpack_require__(79);
+__webpack_require__(85);
 
 /**
  * Inspect canvas.
@@ -1626,14 +1958,14 @@ Canvas.prototype.toDataURL = function(a1, a2, a3){
 
 
 /***/ }),
-/* 36 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {try {global.process.dlopen(module, "/Users/yuanzhaokang/Desktop/NRenderer/node_modules/canvas/build/Release/canvas.node"); } catch(e) {throw new Error('Cannot open ' + "/Users/yuanzhaokang/Desktop/NRenderer/node_modules/canvas/build/Release/canvas.node" + ': ' + e);}
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(37)(module)))
+/* WEBPACK VAR INJECTION */(function(module) {try {global.process.dlopen(module, "/home/yuan/Desktop/NRenderer/node_modules/canvas/build/Release/canvas.node"); } catch(e) {throw new Error('Cannot open ' + "/home/yuan/Desktop/NRenderer/node_modules/canvas/build/Release/canvas.node" + ': ' + e);}
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43)(module)))
 
 /***/ }),
-/* 37 */
+/* 43 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -1661,19 +1993,19 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 38 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
-﻿var t = __webpack_require__(22);
-var unquote = __webpack_require__(58);
-var globalKeywords = __webpack_require__(59);
-var systemFontKeywords = __webpack_require__(60);
-var fontWeightKeywords = __webpack_require__(61);
-var fontStyleKeywords = __webpack_require__(62);
-var fontStretchKeywords = __webpack_require__(63);
-var cssListHelpers = __webpack_require__(64);
+﻿var t = __webpack_require__(21);
+var unquote = __webpack_require__(64);
+var globalKeywords = __webpack_require__(65);
+var systemFontKeywords = __webpack_require__(66);
+var fontWeightKeywords = __webpack_require__(67);
+var fontStyleKeywords = __webpack_require__(68);
+var fontStretchKeywords = __webpack_require__(69);
+var cssListHelpers = __webpack_require__(70);
 
-var helpers = __webpack_require__(65);
+var helpers = __webpack_require__(71);
 
 var SystemFont = t.struct({
 	system: t.String
@@ -1788,7 +2120,7 @@ function parseLineHeight(value) {
 
 
 /***/ }),
-/* 39 */
+/* 45 */
 /***/ (function(module, exports) {
 
 module.exports = function fail(message) {
@@ -1796,7 +2128,7 @@ module.exports = function fail(message) {
 };
 
 /***/ }),
-/* 40 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
@@ -1806,7 +2138,7 @@ module.exports = irreducible('Array', isArray);
 
 
 /***/ }),
-/* 41 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
@@ -1815,7 +2147,7 @@ module.exports = irreducible('Date', function (x) { return x instanceof Date; })
 
 
 /***/ }),
-/* 42 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
@@ -1824,17 +2156,17 @@ module.exports = irreducible('Error', function (x) { return x instanceof Error; 
 
 
 /***/ }),
-/* 43 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
-var isNumber = __webpack_require__(27);
+var isNumber = __webpack_require__(26);
 
 module.exports = irreducible('Number', isNumber);
 
 
 /***/ }),
-/* 44 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
@@ -1844,7 +2176,7 @@ module.exports = irreducible('Object', isObject);
 
 
 /***/ }),
-/* 45 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
@@ -1853,7 +2185,7 @@ module.exports = irreducible('RegExp', function (x) { return x instanceof RegExp
 
 
 /***/ }),
-/* 46 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -1909,7 +2241,7 @@ module.exports = function declare(name) {
 
 
 /***/ }),
-/* 47 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -1973,17 +2305,17 @@ module.exports = enums;
 
 
 /***/ }),
-/* 48 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
 var isTypeName = __webpack_require__(5);
 var isFunction = __webpack_require__(1);
-var isMaybe = __webpack_require__(49);
+var isMaybe = __webpack_require__(55);
 var isIdentity = __webpack_require__(11);
 var Any = __webpack_require__(17);
 var create = __webpack_require__(8);
-var Nil = __webpack_require__(26);
+var Nil = __webpack_require__(25);
 var forbidNewOperator = __webpack_require__(12);
 var is = __webpack_require__(9);
 var getTypeName = __webpack_require__(2);
@@ -2033,7 +2365,7 @@ module.exports = maybe;
 
 
 /***/ }),
-/* 49 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isType = __webpack_require__(4);
@@ -2043,7 +2375,7 @@ module.exports = function isMaybe(x) {
 };
 
 /***/ }),
-/* 50 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -2113,20 +2445,20 @@ module.exports = refinement;
 
 
 /***/ }),
-/* 51 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
 var isTypeName = __webpack_require__(5);
-var String = __webpack_require__(28);
+var String = __webpack_require__(27);
 var Function = __webpack_require__(18);
 var isArray = __webpack_require__(6);
 var isObject = __webpack_require__(10);
 var create = __webpack_require__(8);
 var mixin = __webpack_require__(15);
-var isStruct = __webpack_require__(30);
+var isStruct = __webpack_require__(29);
 var getTypeName = __webpack_require__(2);
-var dict = __webpack_require__(29);
+var dict = __webpack_require__(28);
 
 function getDefaultName(props) {
   return '{' + Object.keys(props).map(function (prop) {
@@ -2224,7 +2556,7 @@ module.exports = struct;
 
 
 /***/ }),
-/* 52 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -2237,7 +2569,7 @@ var create = __webpack_require__(8);
 var is = __webpack_require__(9);
 var forbidNewOperator = __webpack_require__(12);
 var isType = __webpack_require__(4);
-var isUnion = __webpack_require__(53);
+var isUnion = __webpack_require__(59);
 var isNil = __webpack_require__(7);
 
 function getDefaultName(types) {
@@ -2320,7 +2652,7 @@ module.exports = union;
 
 
 /***/ }),
-/* 53 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isType = __webpack_require__(4);
@@ -2330,19 +2662,19 @@ module.exports = function isUnion(x) {
 };
 
 /***/ }),
-/* 54 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
 var isTypeName = __webpack_require__(5);
 var FunctionType = __webpack_require__(18);
 var isArray = __webpack_require__(6);
-var list = __webpack_require__(31);
+var list = __webpack_require__(30);
 var isObject = __webpack_require__(10);
 var create = __webpack_require__(8);
 var isNil = __webpack_require__(7);
-var isBoolean = __webpack_require__(25);
-var tuple = __webpack_require__(32);
+var isBoolean = __webpack_require__(24);
+var tuple = __webpack_require__(31);
 var getFunctionName = __webpack_require__(14);
 var getTypeName = __webpack_require__(2);
 
@@ -2449,7 +2781,7 @@ module.exports = func;
 
 
 /***/ }),
-/* 55 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -2512,14 +2844,14 @@ module.exports = intersection;
 
 
 /***/ }),
-/* 56 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
 var isObject = __webpack_require__(10);
 var isFunction = __webpack_require__(1);
 var isArray = __webpack_require__(6);
-var isNumber = __webpack_require__(27);
+var isNumber = __webpack_require__(26);
 var mixin = __webpack_require__(15);
 
 function getShallowCopy(x) {
@@ -2642,7 +2974,7 @@ module.exports = update;
 
 
 /***/ }),
-/* 57 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -2682,7 +3014,7 @@ module.exports = function match(x) {
 
 
 /***/ }),
-/* 58 */
+/* 64 */
 /***/ (function(module, exports) {
 
 var reg = /[\'\"]/
@@ -2702,7 +3034,7 @@ module.exports = function unquote(str) {
 
 
 /***/ }),
-/* 59 */
+/* 65 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -2712,7 +3044,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 60 */
+/* 66 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -2725,7 +3057,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 61 */
+/* 67 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -2745,7 +3077,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 62 */
+/* 68 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -2755,7 +3087,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 63 */
+/* 69 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -2771,10 +3103,10 @@ module.exports = [
 ];
 
 /***/ }),
-/* 64 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var t = __webpack_require__(22);
+var t = __webpack_require__(21);
 
 var Options = t.struct({
 	last: t.maybe(t.Boolean)
@@ -2859,10 +3191,10 @@ module.exports = helpers;
 
 
 /***/ }),
-/* 65 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var cssFontSizeKeywords = __webpack_require__(66);
+var cssFontSizeKeywords = __webpack_require__(72);
 
 module.exports = {
 
@@ -2877,7 +3209,7 @@ module.exports = {
 
 
 /***/ }),
-/* 66 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -2893,7 +3225,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 67 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2901,11 +3233,11 @@ module.exports = [
 
 
 
-module.exports = __webpack_require__(68);
+module.exports = __webpack_require__(74);
 
 
 /***/ }),
-/* 68 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2914,8 +3246,8 @@ module.exports = __webpack_require__(68);
 
 
 // Imports
-var conversions = __webpack_require__(69);
-var isNumeric = __webpack_require__(74);
+var conversions = __webpack_require__(75);
+var isNumeric = __webpack_require__(80);
 
 var units = {};
 
@@ -3052,7 +3384,7 @@ module.exports = units;
 
 
 /***/ }),
-/* 69 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3062,14 +3394,14 @@ module.exports = units;
 
 // Exports
 module.exports = {
-  'angle': __webpack_require__(70),
-  'length': __webpack_require__(71),
-  'resolution': __webpack_require__(73)
+  'angle': __webpack_require__(76),
+  'length': __webpack_require__(77),
+  'resolution': __webpack_require__(79)
 };
 
 
 /***/ }),
-/* 70 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3119,7 +3451,7 @@ module.exports = angle;
 
 
 /***/ }),
-/* 71 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3128,8 +3460,8 @@ module.exports = angle;
 
 
 // Imports
-var utilities = __webpack_require__(33);
-var viewport = __webpack_require__(72);
+var utilities = __webpack_require__(32);
+var viewport = __webpack_require__(78);
 
 var length = {'_default': 'px'};
 
@@ -3293,7 +3625,7 @@ module.exports = length;
 
 
 /***/ }),
-/* 72 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3384,7 +3716,7 @@ module.exports = viewport;
 
 
 /***/ }),
-/* 73 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3393,7 +3725,7 @@ module.exports = viewport;
 
 
 // Imports
-var utilities = __webpack_require__(33);
+var utilities = __webpack_require__(32);
 
 var resolution = {'_default': 'dpi'};
 
@@ -3427,7 +3759,7 @@ module.exports = resolution;
 
 
 /***/ }),
-/* 74 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isNumeric = function (obj) {
@@ -3444,7 +3776,7 @@ if (true) {
 
 
 /***/ }),
-/* 75 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3512,7 +3844,7 @@ PNGStream.prototype.__proto__ = Stream.prototype;
 
 
 /***/ }),
-/* 76 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3578,7 +3910,7 @@ PDFStream.prototype.__proto__ = Stream.prototype;
 
 
 /***/ }),
-/* 77 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3647,34 +3979,38 @@ JPEGStream.prototype.__proto__ = Stream.prototype;
 
 
 /***/ }),
-/* 78 */
+/* 84 */
 /***/ (function(module, exports) {
 
 module.exports = {
-	"_from": "canvas",
+	"_args": [
+		[
+			"canvas@1.6.5",
+			"/home/yuan/Desktop/NRenderer"
+		]
+	],
+	"_from": "canvas@1.6.5",
 	"_id": "canvas@1.6.5",
 	"_inBundle": false,
 	"_integrity": "sha1-VX+ZiPXSyV/cJHxhpe5D3lL2cXw=",
 	"_location": "/canvas",
 	"_phantomChildren": {},
 	"_requested": {
-		"type": "tag",
+		"type": "version",
 		"registry": true,
-		"raw": "canvas",
+		"raw": "canvas@1.6.5",
 		"name": "canvas",
 		"escapedName": "canvas",
-		"rawSpec": "",
+		"rawSpec": "1.6.5",
 		"saveSpec": null,
-		"fetchSpec": "latest"
+		"fetchSpec": "1.6.5"
 	},
 	"_requiredBy": [
-		"#DEV:/",
-		"#USER"
+		"#DEV:/"
 	],
-	"_resolved": "http://registry.npm.taobao.org/canvas/download/canvas-1.6.5.tgz",
-	"_shasum": "557f9988f5d2c95fdc247c61a5ee43de52f6717c",
-	"_spec": "canvas",
-	"_where": "/Users/yuanzhaokang/Desktop/NChart",
+	"_resolved": "https://registry.npmjs.org/canvas/-/canvas-1.6.5.tgz",
+	"_spec": "1.6.5",
+	"_where": "/home/yuan/Desktop/NRenderer",
 	"author": {
 		"name": "TJ Holowaychuk",
 		"email": "tj@learnboost.com"
@@ -3682,7 +4018,6 @@ module.exports = {
 	"bugs": {
 		"url": "https://github.com/Automattic/node-canvas/issues"
 	},
-	"bundleDependencies": false,
 	"contributors": [
 		{
 			"name": "Nathan Rajlich",
@@ -3702,7 +4037,6 @@ module.exports = {
 		"parse-css-font": "^2.0.2",
 		"units-css": "^0.4.0"
 	},
-	"deprecated": false,
 	"description": "Canvas graphics API backed by Cairo",
 	"devDependencies": {
 		"body-parser": "^1.13.3",
@@ -3746,7 +4080,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 79 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3814,11 +4148,11 @@ Image.prototype.inspect = function(){
 
 
 /***/ }),
-/* 80 */
+/* 86 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fs__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fs__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_fs__);
 
 
@@ -3830,8 +4164,8 @@ class Nfs {
 
     /**
      * Save canvas as a png file.
-     * @param {* Canvas} canvas Create by you. Imported from 'canvas/lib/canvas'.
-     * @param {* string} path Save path of png file.
+     * @param {Canvas} canvas Create by you. Imported from 'canvas/lib/canvas'.
+     * @param {string} path Save path of png file.
      */
     static saveAsPNG(canvas, path) {
         path = path.endsWith('.png') ? path : `${path}.png`;
@@ -3844,88 +4178,6 @@ class Nfs {
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Nfs;
-
-
-/***/ }),
-/* 81 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_canvas_lib_canvas__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_canvas_lib_canvas___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_canvas_lib_canvas__);
-
-
-class NRenderer {
-    constructor(opts) {
-        this.width = opts['width'] || 300;
-        this.height = opts['height'] || 150;
-
-        this.canvas = null;
-        this.context = null;
-
-        this.shapes = [];
-    }
-
-    /**
-     * Get canvas 2d context.
-     */
-    getContext() {
-        this.canvas = new __WEBPACK_IMPORTED_MODULE_0_canvas_lib_canvas___default.a(this.width, this.height);
-        this.context = this.canvas.getContext('2d');
-
-        return this.context;
-    }
-
-    /**
-     * Get canvas. for example, if you want to write it to file, you can use it to get canvas.
-     */
-    getCanvas() {
-        return this.canvas;
-    }
-
-    /**
-     * Get canvas width.
-     */
-    getWidth() {
-        return this.width;
-    }
-
-    /**
-     * Get canvas height;
-     */
-    getHeight() {
-        return this.height;
-    }
-
-    /**
-     * Set canvas width.
-     * @param {* Number} width 
-     */
-    setWidth(width) {
-        this.width = width;
-    }
-
-    /**
-     * Set canvas height.
-     * @param {*Number} height 
-     */
-    setHeight(height) {
-        this.height = height;
-    }
-
-    /**
-     * Add shape to nrenderer to render them.
-     * @param {* Shape} shape 
-     */
-    add(shape) {}
-
-    /**
-     * Remove shape from nrenderer.
-     * @param {* Shape} shape 
-     */
-    remove(shape) {}
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = NRenderer;
 
 
 /***/ })

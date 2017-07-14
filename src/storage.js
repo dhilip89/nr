@@ -16,6 +16,18 @@ export default class Storage {
     }
 
     /**
+     * Get shape from storage.
+     * @param {Number} i 
+     */
+    get(i) {
+        return this.shapes[i];
+    }
+
+    getAll() {
+        return this.shapes;
+    }
+
+    /**
      * Remove shape from storage.
      * @param {Shape} shape 
      */

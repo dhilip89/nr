@@ -17,7 +17,6 @@
     "visualization",
     "node-canvas",
     "canvas",
-    "zrender",
     "dataviz",
     "datavisualization"
   ],
@@ -33,7 +32,7 @@
     "babel-preset-es2015": "^6.24.1",
     "canvas": "^1.6.5",
     "node-loader": "^0.6.0",
-    "webpack": "^3.0.0",
-    "zrender": "^3.5.2"
+    "nodemon": "^1.11.0",
+    "webpack": "^3.0.0"
   }
 }

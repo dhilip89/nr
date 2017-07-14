@@ -10,8 +10,8 @@ export default class Nfs {
 
     /**
      * Save canvas as a png file.
-     * @param {* Canvas} canvas Create by you. Imported from 'canvas/lib/canvas'.
-     * @param {* string} path Save path of png file.
+     * @param {Canvas} canvas Create by you. Imported from 'canvas/lib/canvas'.
+     * @param {string} path Save path of png file.
      */
     static saveAsPNG(canvas, path) {
         path = path.endsWith('.png') ? path : `${path}.png`;

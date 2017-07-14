@@ -16,8 +16,8 @@ export default class NRenderer {
         this.context = null;
         this.shapes = [];
 
+        this.painter = null;
         this.storage = new Storage();
-        this.painter = new Painter(this.context);
     }
 
     /**
@@ -26,6 +26,7 @@ export default class NRenderer {
     init() {
         this.canvas = new Canvas(this.width, this.height);
         this.context = this.canvas.getContext('2d');
+        this.painter = new Painter(this.context);
     }
 
     /**
@@ -89,9 +90,29 @@ export default class NRenderer {
     }
 
     /**
-     * Repaint the canvas.
+     * paint all shapes.
      */
-    repaint() {
+    paint() {
+        for (let i = 0; i < this.storage.count(); i++) {
+            this.painter.paint(this.storage.get(i));
+        }
+    }
 
+    /**
+     * Clear canvas.
+     * @param {Number} x 
+     * @param {Number} y 
+     * @param {Number} width 
+     * @param {Number} height 
+     */
+    clear(x, y, width, height) {
+        this.painter.clear(x, y, width, height);
+    }
+
+    /**
+     * Clear all the canvas.
+     */
+    clearAll() {
+        this.clear(0, 0, this.width, this.height);
     }
 }

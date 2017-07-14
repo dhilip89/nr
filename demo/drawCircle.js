@@ -22,21 +22,6 @@ let c = new Circle({
 });
 
 nr.add(c);
-
-c = new Circle({
-    shape: {
-        cx: 120,
-        cy: 120,
-        r: 20
-    },
-    style: {
-        fillStyle: 'blue',
-        strokeStyle: 'orange',
-        lineWidth: 3
-    }
-});
-
-nr.add(c);
 nr.paint();
 
 Nfs.saveAsPNG(nr.getCanvas(), './test/test.png');
