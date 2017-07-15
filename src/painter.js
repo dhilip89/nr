@@ -22,7 +22,19 @@ export default class Painter {
         let shapeStyle = shape.opts.style;
         let style = new Style(shapeStyle);
         style.bind(this.context); // bind style to context.
+        this.context.beginPath();
         shape.buildPath(this.context); // paint base shape.
+        this.context.closePath();
+    }
+
+    /**
+     * Paint all shapes.
+     * @param {Array} shapes 
+     */
+    paintAll(shapes) {
+        for (let i = 0; i < shapes.length; i++) {
+            this.paint(shapes[i]);
+        }
     }
 
     /**

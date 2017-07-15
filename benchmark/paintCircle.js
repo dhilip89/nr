@@ -1,10 +1,23 @@
+// import hello from './test';
+// import BenchMark from 'benchmark';
+
+// export default function test() {
+//     let suite = BenchMark.Suite;
+//     suite.add('suite =======>>>', function () {
+//         test();
+//     }).on('cycle', function (event) {
+//         console.log(String(event.target));
+//     }).on('complete', function () {
+//         console.log('Fastest is ' + this.filter('fastest').map('name'));
+//     }).run({ 'async': true });
+// };
+
+import BenchMark from 'benchmark';
 import Circle from '../src/graphic/shape/circle';
-import Rect from '../src/graphic/shape/rect';
-import Line from '../src/graphic/shape/line';
 import NRenderer from '../src/nrenderer';
 import Nfs from '../src/io/nfs';
 
-export default function () {
+function circle() {
     let nr = new NRenderer({
         width: 300,
         height: 300
@@ -49,41 +62,24 @@ export default function () {
         },
         style: {
             fillStyle: 'green',
-            // strokeStyle: 'orange',
+            strokeStyle: 'orange',
             lineWidth: 3
         }
     });
 
     nr.add(c);
-
-    let rect = new Rect({
-        shape: {
-            x: 100,
-            y: 100,
-            width: 100,
-            height: 100
-        },
-        style: {
-            fillStyle: 'red',
-            // strokeStyle: 'rgba()'
-        }
-    });
-    nr.add(rect);
-
-    let line = new Line({
-        shape: {
-            x1: 10,
-            y1: 10,
-            x2: 120,
-            y2: 50
-        },
-        style: {
-            strokeStyle: 'yellow',
-            lineWidth: 2
-        }
-    });
-    nr.add(line);
-
     nr.paint();
-    Nfs.saveAsPNG(nr.getCanvas(), './test/test.png');
+
+    // Nfs.saveAsPNG(nr.getCanvas(), './test/test.png');
 }
+
+export default function test() {
+    let suite = new BenchMark.Suite;
+    suite.add('suite', function () {
+        circle();
+    }).on('cycle', function (event) {
+        console.log(String(event.target));
+    }).on('complete', function () {
+        console.log('Fastest is ' + this.filter('fastest').map('name'));
+    }).run({ 'async': true });
+};

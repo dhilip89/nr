@@ -93,9 +93,7 @@ export default class NRenderer {
      * paint all shapes.
      */
     paint() {
-        for (let i = 0; i < this.storage.count(); i++) {
-            this.painter.paint(this.storage.get(i));
-        }
+        this.painter.paintAll(this.storage.getAll());
     }
 
     /**
