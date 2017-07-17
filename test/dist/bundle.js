@@ -69,7 +69,7 @@
 
 var isFunction = __webpack_require__(1);
 var isNil = __webpack_require__(7);
-var fail = __webpack_require__(47);
+var fail = __webpack_require__(48);
 var stringify = __webpack_require__(23);
 
 function assert(guard, message) {
@@ -316,41 +316,6 @@ module.exports = function mixin(target, source, overwrite) {
 
 /***/ }),
 /* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(44);
-
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var irreducible = __webpack_require__(3);
-
-module.exports = irreducible('Any', function () { return true; });
-
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var irreducible = __webpack_require__(3);
-var isFunction = __webpack_require__(1);
-
-module.exports = irreducible('Function', isFunction);
-
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports) {
-
-module.exports = require("stream");
-
-/***/ }),
-/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -369,6 +334,41 @@ class Shape {
 
 
 /***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(45);
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var irreducible = __webpack_require__(3);
+
+module.exports = irreducible('Any', function () { return true; });
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var irreducible = __webpack_require__(3);
+var isFunction = __webpack_require__(1);
+
+module.exports = irreducible('Function', isFunction);
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+module.exports = require("stream");
+
+/***/ }),
 /* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -385,15 +385,15 @@ class Shape {
  * Module dependencies.
  */
 
-var canvas = __webpack_require__(16)
+var canvas = __webpack_require__(17)
   , Context2d = canvas.CanvasRenderingContext2d
   , CanvasGradient = canvas.CanvasGradient
   , CanvasPattern = canvas.CanvasPattern
   , ImageData = canvas.ImageData;
 
-var parseCssFont = __webpack_require__(46);
+var parseCssFont = __webpack_require__(47);
 
-var unitsCss = __webpack_require__(75);
+var unitsCss = __webpack_require__(76);
 
 /**
  * Export `Context2d` as the module.
@@ -757,16 +757,16 @@ Context2d.prototype.createImageData = function(width, height){
 var t = __webpack_require__(0);
 
 // types
-t.Any = __webpack_require__(17);
-t.Array = __webpack_require__(48);
+t.Any = __webpack_require__(18);
+t.Array = __webpack_require__(49);
 t.Boolean = __webpack_require__(24);
-t.Date = __webpack_require__(49);
-t.Error = __webpack_require__(50);
-t.Function = __webpack_require__(18);
+t.Date = __webpack_require__(50);
+t.Error = __webpack_require__(51);
+t.Function = __webpack_require__(19);
 t.Nil = __webpack_require__(26);
-t.Number = __webpack_require__(51);
-t.Object = __webpack_require__(52);
-t.RegExp = __webpack_require__(53);
+t.Number = __webpack_require__(52);
+t.Object = __webpack_require__(53);
+t.RegExp = __webpack_require__(54);
 t.String = __webpack_require__(28);
 
 // short alias are deprecated
@@ -782,27 +782,27 @@ t.Str = t.String;
 
 // combinators
 t.dict = __webpack_require__(29);
-t.declare = __webpack_require__(54);
-t.enums = __webpack_require__(55);
+t.declare = __webpack_require__(55);
+t.enums = __webpack_require__(56);
 t.irreducible = __webpack_require__(3);
 t.list = __webpack_require__(31);
-t.maybe = __webpack_require__(56);
-t.refinement = __webpack_require__(58);
-t.struct = __webpack_require__(59);
+t.maybe = __webpack_require__(57);
+t.refinement = __webpack_require__(59);
+t.struct = __webpack_require__(60);
 t.tuple = __webpack_require__(32);
-t.union = __webpack_require__(60);
-t.func = __webpack_require__(62);
-t.intersection = __webpack_require__(63);
+t.union = __webpack_require__(61);
+t.func = __webpack_require__(63);
+t.intersection = __webpack_require__(64);
 t.subtype = t.refinement;
 
 // functions
 t.assert = t;
-t.update = __webpack_require__(64);
+t.update = __webpack_require__(65);
 t.mixin = __webpack_require__(15);
 t.isType = __webpack_require__(4);
 t.is = __webpack_require__(9);
 t.getTypeName = __webpack_require__(2);
-t.match = __webpack_require__(65);
+t.match = __webpack_require__(66);
 
 module.exports = t;
 
@@ -1303,10 +1303,16 @@ module.exports = require("fs");
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__test__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__circle__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__polyline__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__heatmap__ = __webpack_require__(92);
 
 
-Object(__WEBPACK_IMPORTED_MODULE_0__test__["a" /* default */])();
+
+
+// circle();
+// polyLine();
+Object(__WEBPACK_IMPORTED_MODULE_2__heatmap__["a" /* default */])();
 
 /***/ }),
 /* 36 */
@@ -1315,16 +1321,16 @@ Object(__WEBPACK_IMPORTED_MODULE_0__test__["a" /* default */])();
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_graphic_shape_circle__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_graphic_shape_rect__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_graphic_shape_line__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_nrenderer__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_io_nfs__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_graphic_shape_line__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_nrenderer__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_io_nfs__ = __webpack_require__(89);
 
 
 
 
 
 
-/* harmony default export */ __webpack_exports__["a"] = (function () {
+/* unused harmony default export */ var _unused_webpack_default_export = (function () {
     let nr = new __WEBPACK_IMPORTED_MODULE_3__src_nrenderer__["a" /* default */]({
         width: 300,
         height: 300
@@ -1339,7 +1345,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__test__["a" /* default */])();
         },
         style: {
             fillStyle: 'blue',
-            strokeStyle: 'orange',
+            strokeStyle: 'red',
             lineWidth: 3
         }
     });
@@ -1354,7 +1360,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__test__["a" /* default */])();
         },
         style: {
             fillStyle: 'red',
-            strokeStyle: 'orange',
+            strokeStyle: 'green',
             lineWidth: 3
         }
     });
@@ -1369,40 +1375,40 @@ Object(__WEBPACK_IMPORTED_MODULE_0__test__["a" /* default */])();
         },
         style: {
             fillStyle: 'green',
-            // strokeStyle: 'orange',
+            strokeStyle: 'blue',
             lineWidth: 3
         }
     });
 
     nr.add(c);
 
-    let rect = new __WEBPACK_IMPORTED_MODULE_1__src_graphic_shape_rect__["a" /* default */]({
-        shape: {
-            x: 100,
-            y: 100,
-            width: 100,
-            height: 100
-        },
-        style: {
-            fillStyle: 'red'
-            // strokeStyle: 'rgba()'
-        }
-    });
-    nr.add(rect);
+    // let rect = new Rect({
+    //     shape: {
+    //         x: 100,
+    //         y: 100,
+    //         width: 100,
+    //         height: 100
+    //     },
+    //     style: {
+    //         fillStyle: 'red',
+    //         // strokeStyle: 'rgba()'
+    //     }
+    // });
+    // nr.add(rect);
 
-    let line = new __WEBPACK_IMPORTED_MODULE_2__src_graphic_shape_line__["a" /* default */]({
-        shape: {
-            x1: 10,
-            y1: 10,
-            x2: 120,
-            y2: 50
-        },
-        style: {
-            strokeStyle: 'yellow',
-            lineWidth: 2
-        }
-    });
-    nr.add(line);
+    // let line = new Line({
+    //     shape: {
+    //         x1: 10,
+    //         y1: 10,
+    //         x2: 120,
+    //         y2: 50
+    //     },
+    //     style: {
+    //         strokeStyle: 'yellow',
+    //         lineWidth: 2
+    //     }
+    // });
+    // nr.add(line);
 
     nr.paint();
     __WEBPACK_IMPORTED_MODULE_4__src_io_nfs__["a" /* default */].saveAsPNG(nr.getCanvas(), './test/test.png');
@@ -1413,7 +1419,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__test__["a" /* default */])();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(16);
 
 
 /**
@@ -1445,7 +1451,7 @@ class Circle extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(16);
 
 
 /**
@@ -1468,7 +1474,7 @@ class Rect extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
         context.stroke();
     }
 }
-/* harmony export (immutable) */ __webpack_exports__["a"] = Rect;
+/* unused harmony export default */
 
 
 /***/ }),
@@ -1476,9 +1482,46 @@ class Rect extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__storage__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__painter__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_canvas_lib_canvas__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(16);
+
+
+/**
+ * @author yuanzhaokang <kangzhaoyuan@gmail.com>
+ * Circle shape.
+ */
+class Line extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
+    constructor(opts) {
+        super(opts);
+
+        this.x1 = opts.shape.x1 || 0;
+        this.y1 = opts.shape.y1 || 0;
+        this.x2 = opts.shape.x2 || 150;
+        this.y2 = opts.shape.y2 || 75;
+
+        // this.style = Object.assign({}, {
+        //     strokeStyle: 'black',
+        //     lineWidth: 1
+        // }, opts.style);
+    }
+
+    buildPath(context) {
+        let { x1, y1, x2, y2 } = this;
+        context.moveTo(x1, y1);
+        context.lineTo(x2, y2);
+        context.stroke();
+    }
+}
+/* unused harmony export default */
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__storage__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__painter__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_canvas_lib_canvas__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_canvas_lib_canvas___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_canvas_lib_canvas__);
 
 
@@ -1600,7 +1643,7 @@ class NRenderer {
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1656,11 +1699,11 @@ class Storage {
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__graphic_style__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__graphic_style__ = __webpack_require__(43);
 
 
 
@@ -1711,7 +1754,7 @@ class Painter {
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1730,7 +1773,6 @@ class Style {
      */
     bind(context) {
         this.reset(context);
-        console.log(this.style);
         let styleName = Object.keys(this.style);
 
         for (let i = 0; i < styleName.length; i++) {
@@ -1770,7 +1812,7 @@ class Style {
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1786,17 +1828,17 @@ class Style {
  * Module dependencies.
  */
 
-var canvas = __webpack_require__(16)
+var canvas = __webpack_require__(17)
   , Canvas = canvas.Canvas
   , Image = canvas.Image
   , cairoVersion = canvas.cairoVersion
   , Context2d = __webpack_require__(21)
-  , PNGStream = __webpack_require__(83)
-  , PDFStream = __webpack_require__(84)
-  , JPEGStream = __webpack_require__(85)
+  , PNGStream = __webpack_require__(84)
+  , PDFStream = __webpack_require__(85)
+  , JPEGStream = __webpack_require__(86)
   , FontFace = canvas.FontFace
   , fs = __webpack_require__(34)
-  , packageJson = __webpack_require__(86)
+  , packageJson = __webpack_require__(87)
   , FORMATS = ['image/png', 'image/jpeg'];
 
 /**
@@ -1885,7 +1927,7 @@ __webpack_require__(21);
  * Image implementation.
  */
 
-__webpack_require__(87);
+__webpack_require__(88);
 
 /**
  * Inspect canvas.
@@ -2095,14 +2137,14 @@ Canvas.prototype.toDataURL = function(a1, a2, a3){
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {try {global.process.dlopen(module, "/Users/yuanzhaokang/Desktop/NRenderer/node_modules/.1.6.5@canvas/build/Release/canvas.node"); } catch(e) {throw new Error('Cannot open ' + "/Users/yuanzhaokang/Desktop/NRenderer/node_modules/.1.6.5@canvas/build/Release/canvas.node" + ': ' + e);}
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(45)(module)))
+/* WEBPACK VAR INJECTION */(function(module) {try {global.process.dlopen(module, "/home/yuan/Desktop/NRenderer/node_modules/canvas/build/Release/canvas.node"); } catch(e) {throw new Error('Cannot open ' + "/home/yuan/Desktop/NRenderer/node_modules/canvas/build/Release/canvas.node" + ': ' + e);}
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(46)(module)))
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -2130,19 +2172,19 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ﻿var t = __webpack_require__(22);
-var unquote = __webpack_require__(66);
-var globalKeywords = __webpack_require__(67);
-var systemFontKeywords = __webpack_require__(68);
-var fontWeightKeywords = __webpack_require__(69);
-var fontStyleKeywords = __webpack_require__(70);
-var fontStretchKeywords = __webpack_require__(71);
-var cssListHelpers = __webpack_require__(72);
+var unquote = __webpack_require__(67);
+var globalKeywords = __webpack_require__(68);
+var systemFontKeywords = __webpack_require__(69);
+var fontWeightKeywords = __webpack_require__(70);
+var fontStyleKeywords = __webpack_require__(71);
+var fontStretchKeywords = __webpack_require__(72);
+var cssListHelpers = __webpack_require__(73);
 
-var helpers = __webpack_require__(73);
+var helpers = __webpack_require__(74);
 
 var SystemFont = t.struct({
 	system: t.String
@@ -2257,7 +2299,7 @@ function parseLineHeight(value) {
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports) {
 
 module.exports = function fail(message) {
@@ -2265,7 +2307,7 @@ module.exports = function fail(message) {
 };
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
@@ -2275,7 +2317,7 @@ module.exports = irreducible('Array', isArray);
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
@@ -2284,7 +2326,7 @@ module.exports = irreducible('Date', function (x) { return x instanceof Date; })
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
@@ -2293,7 +2335,7 @@ module.exports = irreducible('Error', function (x) { return x instanceof Error; 
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
@@ -2303,7 +2345,7 @@ module.exports = irreducible('Number', isNumber);
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
@@ -2313,7 +2355,7 @@ module.exports = irreducible('Object', isObject);
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
@@ -2322,7 +2364,7 @@ module.exports = irreducible('RegExp', function (x) { return x instanceof RegExp
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -2378,7 +2420,7 @@ module.exports = function declare(name) {
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -2442,15 +2484,15 @@ module.exports = enums;
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
 var isTypeName = __webpack_require__(5);
 var isFunction = __webpack_require__(1);
-var isMaybe = __webpack_require__(57);
+var isMaybe = __webpack_require__(58);
 var isIdentity = __webpack_require__(11);
-var Any = __webpack_require__(17);
+var Any = __webpack_require__(18);
 var create = __webpack_require__(8);
 var Nil = __webpack_require__(26);
 var forbidNewOperator = __webpack_require__(12);
@@ -2502,7 +2544,7 @@ module.exports = maybe;
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isType = __webpack_require__(4);
@@ -2512,7 +2554,7 @@ module.exports = function isMaybe(x) {
 };
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -2582,13 +2624,13 @@ module.exports = refinement;
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
 var isTypeName = __webpack_require__(5);
 var String = __webpack_require__(28);
-var Function = __webpack_require__(18);
+var Function = __webpack_require__(19);
 var isArray = __webpack_require__(6);
 var isObject = __webpack_require__(10);
 var create = __webpack_require__(8);
@@ -2693,7 +2735,7 @@ module.exports = struct;
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -2706,7 +2748,7 @@ var create = __webpack_require__(8);
 var is = __webpack_require__(9);
 var forbidNewOperator = __webpack_require__(12);
 var isType = __webpack_require__(4);
-var isUnion = __webpack_require__(61);
+var isUnion = __webpack_require__(62);
 var isNil = __webpack_require__(7);
 
 function getDefaultName(types) {
@@ -2789,7 +2831,7 @@ module.exports = union;
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isType = __webpack_require__(4);
@@ -2799,12 +2841,12 @@ module.exports = function isUnion(x) {
 };
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
 var isTypeName = __webpack_require__(5);
-var FunctionType = __webpack_require__(18);
+var FunctionType = __webpack_require__(19);
 var isArray = __webpack_require__(6);
 var list = __webpack_require__(31);
 var isObject = __webpack_require__(10);
@@ -2918,7 +2960,7 @@ module.exports = func;
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -2981,7 +3023,7 @@ module.exports = intersection;
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
@@ -3111,13 +3153,13 @@ module.exports = update;
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
 var isFunction = __webpack_require__(1);
 var isType = __webpack_require__(4);
-var Any = __webpack_require__(17);
+var Any = __webpack_require__(18);
 
 module.exports = function match(x) {
   var type, guard, f, count;
@@ -3151,7 +3193,7 @@ module.exports = function match(x) {
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports) {
 
 var reg = /[\'\"]/
@@ -3171,7 +3213,7 @@ module.exports = function unquote(str) {
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -3181,7 +3223,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -3194,7 +3236,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -3214,7 +3256,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -3224,7 +3266,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -3240,7 +3282,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var t = __webpack_require__(22);
@@ -3328,10 +3370,10 @@ module.exports = helpers;
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var cssFontSizeKeywords = __webpack_require__(74);
+var cssFontSizeKeywords = __webpack_require__(75);
 
 module.exports = {
 
@@ -3346,7 +3388,7 @@ module.exports = {
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -3362,18 +3404,6 @@ module.exports = [
 ];
 
 /***/ }),
-/* 75 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* eslint-env browser, node */
-
-
-
-module.exports = __webpack_require__(76);
-
-
-/***/ }),
 /* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3382,9 +3412,21 @@ module.exports = __webpack_require__(76);
 
 
 
+module.exports = __webpack_require__(77);
+
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* eslint-env browser, node */
+
+
+
 // Imports
-var conversions = __webpack_require__(77);
-var isNumeric = __webpack_require__(82);
+var conversions = __webpack_require__(78);
+var isNumeric = __webpack_require__(83);
 
 var units = {};
 
@@ -3521,7 +3563,7 @@ module.exports = units;
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3531,14 +3573,14 @@ module.exports = units;
 
 // Exports
 module.exports = {
-  'angle': __webpack_require__(78),
-  'length': __webpack_require__(79),
-  'resolution': __webpack_require__(81)
+  'angle': __webpack_require__(79),
+  'length': __webpack_require__(80),
+  'resolution': __webpack_require__(82)
 };
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3588,7 +3630,7 @@ module.exports = angle;
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3598,7 +3640,7 @@ module.exports = angle;
 
 // Imports
 var utilities = __webpack_require__(33);
-var viewport = __webpack_require__(80);
+var viewport = __webpack_require__(81);
 
 var length = {'_default': 'px'};
 
@@ -3762,7 +3804,7 @@ module.exports = length;
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3853,7 +3895,7 @@ module.exports = viewport;
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3896,7 +3938,7 @@ module.exports = resolution;
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isNumeric = function (obj) {
@@ -3913,7 +3955,7 @@ if (true) {
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3929,7 +3971,7 @@ if (true) {
  * Module dependencies.
  */
 
-var Stream = __webpack_require__(19).Stream;
+var Stream = __webpack_require__(20).Stream;
 
 /**
  * Initialize a `PNGStream` with the given `canvas`.
@@ -3981,7 +4023,7 @@ PNGStream.prototype.__proto__ = Stream.prototype;
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3995,7 +4037,7 @@ PNGStream.prototype.__proto__ = Stream.prototype;
  * Module dependencies.
  */
 
-var Stream = __webpack_require__(19).Stream;
+var Stream = __webpack_require__(20).Stream;
 
 /**
  * Initialize a `PDFStream` with the given `canvas`.
@@ -4047,7 +4089,7 @@ PDFStream.prototype.__proto__ = Stream.prototype;
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4063,7 +4105,7 @@ PDFStream.prototype.__proto__ = Stream.prototype;
  * Module dependencies.
  */
 
-var Stream = __webpack_require__(19).Stream;
+var Stream = __webpack_require__(20).Stream;
 
 /**
  * Initialize a `JPEGStream` with the given `canvas`.
@@ -4116,19 +4158,77 @@ JPEGStream.prototype.__proto__ = Stream.prototype;
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports) {
 
 module.exports = {
-	"name": "canvas",
-	"description": "Canvas graphics API backed by Cairo",
-	"version": "1.6.5",
-	"author": "TJ Holowaychuk <tj@learnboost.com>",
-	"contributors": [
-		"Nathan Rajlich <nathan@tootallnate.net>",
-		"Rod Vagg <r@va.gg>",
-		"Juriy Zaytsev <kangax@gmail.com>"
+	"_args": [
+		[
+			"canvas@1.6.5",
+			"/home/yuan/Desktop/NRenderer"
+		]
 	],
+	"_from": "canvas@1.6.5",
+	"_id": "canvas@1.6.5",
+	"_inBundle": false,
+	"_integrity": "sha1-VX+ZiPXSyV/cJHxhpe5D3lL2cXw=",
+	"_location": "/canvas",
+	"_phantomChildren": {},
+	"_requested": {
+		"type": "version",
+		"registry": true,
+		"raw": "canvas@1.6.5",
+		"name": "canvas",
+		"escapedName": "canvas",
+		"rawSpec": "1.6.5",
+		"saveSpec": null,
+		"fetchSpec": "1.6.5"
+	},
+	"_requiredBy": [
+		"#DEV:/"
+	],
+	"_resolved": "https://registry.npmjs.org/canvas/-/canvas-1.6.5.tgz",
+	"_spec": "1.6.5",
+	"_where": "/home/yuan/Desktop/NRenderer",
+	"author": {
+		"name": "TJ Holowaychuk",
+		"email": "tj@learnboost.com"
+	},
+	"bugs": {
+		"url": "https://github.com/Automattic/node-canvas/issues"
+	},
+	"contributors": [
+		{
+			"name": "Nathan Rajlich",
+			"email": "nathan@tootallnate.net"
+		},
+		{
+			"name": "Rod Vagg",
+			"email": "r@va.gg"
+		},
+		{
+			"name": "Juriy Zaytsev",
+			"email": "kangax@gmail.com"
+		}
+	],
+	"dependencies": {
+		"nan": "^2.4.0",
+		"parse-css-font": "^2.0.2",
+		"units-css": "^0.4.0"
+	},
+	"description": "Canvas graphics API backed by Cairo",
+	"devDependencies": {
+		"body-parser": "^1.13.3",
+		"express": "^4.13.2",
+		"mocha": "*",
+		"pug": "^2.0.0-beta3",
+		"standard": "^7.1.1"
+	},
+	"engines": {
+		"node": ">=0.8.0"
+	},
+	"gypfile": true,
+	"homepage": "https://github.com/Automattic/node-canvas",
 	"keywords": [
 		"canvas",
 		"graphic",
@@ -4139,39 +4239,27 @@ module.exports = {
 		"images",
 		"pdf"
 	],
-	"homepage": "https://github.com/Automattic/node-canvas",
-	"repository": "git://github.com/Automattic/node-canvas.git",
+	"license": "MIT",
+	"main": "./lib/canvas.js",
+	"name": "canvas",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/Automattic/node-canvas.git"
+	},
 	"scripts": {
-		"prebenchmark": "node-gyp build",
 		"benchmark": "node benchmarks/run.js",
+		"install": "node-gyp rebuild",
+		"prebenchmark": "node-gyp build",
 		"pretest": "node-gyp build",
-		"test": "standard examples/*.js && mocha test/*.test.js",
 		"pretest-server": "node-gyp build",
+		"test": "standard examples/*.js && mocha test/*.test.js",
 		"test-server": "node test/server.js"
 	},
-	"dependencies": {
-		"nan": "^2.4.0",
-		"parse-css-font": "^2.0.2",
-		"units-css": "^0.4.0"
-	},
-	"devDependencies": {
-		"body-parser": "^1.13.3",
-		"express": "^4.13.2",
-		"pug": "^2.0.0-beta3",
-		"mocha": "*",
-		"standard": "^7.1.1"
-	},
-	"engines": {
-		"node": ">=0.8.0"
-	},
-	"main": "./lib/canvas.js",
-	"license": "MIT",
-	"_from": "canvas@1.6.5",
-	"_resolved": "http://registry.npm.taobao.org/canvas/download/canvas-1.6.5.tgz"
+	"version": "1.6.5"
 };
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4187,7 +4275,7 @@ module.exports = {
  * Module dependencies.
  */
 
-var Canvas = __webpack_require__(16)
+var Canvas = __webpack_require__(17)
   , Image = Canvas.Image;
 
 /**
@@ -4239,7 +4327,7 @@ Image.prototype.inspect = function(){
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4272,41 +4360,112 @@ class Nfs {
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_graphic_shape_polyline__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_nrenderer__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_io_nfs__ = __webpack_require__(89);
+
+
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = (function () {
+    let nr = new __WEBPACK_IMPORTED_MODULE_1__src_nrenderer__["a" /* default */]({
+        width: 300,
+        height: 300
+    });
+    nr.init();
+
+    let polyLine = new __WEBPACK_IMPORTED_MODULE_0__src_graphic_shape_polyline__["a" /* default */]({
+        shape: {
+            points: [[10, 10], [100, 100], [100, 30], [120, 90], [200, 250]]
+        },
+        style: {
+            strokeStyle: 'red',
+            lineWidth: 3
+        }
+    });
+
+    nr.add(polyLine);
+    nr.paint();
+    __WEBPACK_IMPORTED_MODULE_2__src_io_nfs__["a" /* default */].saveAsPNG(nr.getCanvas(), './test/test.png');
+});
+
+/***/ }),
+/* 91 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(16);
 
 
 /**
  * @author yuanzhaokang <kangzhaoyuan@gmail.com>
- * Circle shape.
+ * Polyline.
  */
-class Line extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
+class Polyline extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
     constructor(opts) {
         super(opts);
+        this.type = 'polyline';
 
-        this.x1 = opts.shape.x1 || 0;
-        this.y1 = opts.shape.y1 || 0;
-        this.x2 = opts.shape.x2 || 150;
-        this.y2 = opts.shape.y2 || 75;
-
-        // this.style = Object.assign({}, {
-        //     strokeStyle: 'black',
-        //     lineWidth: 1
-        // }, opts.style);
+        this.points = opts.shape['points'] || [];
     }
 
     buildPath(context) {
-        let { x1, y1, x2, y2 } = this;
-        context.moveTo(x1, y1);
-        context.lineTo(x2, y2);
+        context.beginPath();
+        context.moveTo(this.points[0][0], this.points[0][1]);
+
+        for (let i = 0; i < this.points.length; i++) {
+            context.lineTo(this.points[i][0], this.points[i][1]);
+        }
+
         context.stroke();
+        context.closePath();
     }
 }
-/* harmony export (immutable) */ __webpack_exports__["a"] = Line;
+/* harmony export (immutable) */ __webpack_exports__["a"] = Polyline;
 
+
+/***/ }),
+/* 92 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_nrenderer__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_io_nfs__ = __webpack_require__(89);
+// import Polyline from '../src/graphic/shape/polyline';
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+    let nr = new __WEBPACK_IMPORTED_MODULE_0__src_nrenderer__["a" /* default */]({
+        width: 300,
+        height: 300
+    });
+    nr.init();
+
+    // let polyLine = new Polyline({
+    //     shape: {
+    //         points: [
+    //             [10, 10],
+    //             [100, 100],
+    //             [100, 30],
+    //             [120, 90],
+    //             [200,250]
+    //         ]
+    //     },
+    //     style: {
+    //         strokeStyle: 'red',
+    //         lineWidth: 3
+    //     }
+    // });
+
+    // nr.add(polyLine);
+    nr.paint();
+    __WEBPACK_IMPORTED_MODULE_1__src_io_nfs__["a" /* default */].saveAsPNG(nr.getCanvas(), './test/test.png');
+});
 
 /***/ })
 /******/ ]);

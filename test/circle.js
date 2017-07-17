@@ -19,7 +19,7 @@ export default function () {
         },
         style: {
             fillStyle: 'blue',
-            strokeStyle: 'orange',
+            strokeStyle: 'red',
             lineWidth: 3
         }
     });
@@ -34,7 +34,7 @@ export default function () {
         },
         style: {
             fillStyle: 'red',
-            strokeStyle: 'orange',
+            strokeStyle: 'green',
             lineWidth: 3
         }
     });
@@ -49,40 +49,40 @@ export default function () {
         },
         style: {
             fillStyle: 'green',
-            // strokeStyle: 'orange',
+            strokeStyle: 'blue',
             lineWidth: 3
         }
     });
 
     nr.add(c);
 
-    let rect = new Rect({
-        shape: {
-            x: 100,
-            y: 100,
-            width: 100,
-            height: 100
-        },
-        style: {
-            fillStyle: 'red',
-            // strokeStyle: 'rgba()'
-        }
-    });
-    nr.add(rect);
+    // let rect = new Rect({
+    //     shape: {
+    //         x: 100,
+    //         y: 100,
+    //         width: 100,
+    //         height: 100
+    //     },
+    //     style: {
+    //         fillStyle: 'red',
+    //         // strokeStyle: 'rgba()'
+    //     }
+    // });
+    // nr.add(rect);
 
-    let line = new Line({
-        shape: {
-            x1: 10,
-            y1: 10,
-            x2: 120,
-            y2: 50
-        },
-        style: {
-            strokeStyle: 'yellow',
-            lineWidth: 2
-        }
-    });
-    nr.add(line);
+    // let line = new Line({
+    //     shape: {
+    //         x1: 10,
+    //         y1: 10,
+    //         x2: 120,
+    //         y2: 50
+    //     },
+    //     style: {
+    //         strokeStyle: 'yellow',
+    //         lineWidth: 2
+    //     }
+    // });
+    // nr.add(line);
 
     nr.paint();
     Nfs.saveAsPNG(nr.getCanvas(), './test/test.png');

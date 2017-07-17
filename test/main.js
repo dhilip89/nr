@@ -1,3 +1,7 @@
-import test from './test';
+import circle from './circle';
+import polyLine from './polyline';
+import heatmap from './heatmap';
 
-test();
+// circle();
+// polyLine();
+heatmap();

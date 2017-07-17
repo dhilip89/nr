@@ -13,7 +13,6 @@ export default class Style {
      */
     bind(context) {
         this.reset(context);
-        console.log(this.style)
         let styleName = Object.keys(this.style);
 
         for (let i = 0; i < styleName.length; i++) {
