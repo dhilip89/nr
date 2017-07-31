@@ -1467,13 +1467,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__circle__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__polyline__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__heatmap__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__arc__ = __webpack_require__(93);
 
 
 
 
-// circle();
+
+Object(__WEBPACK_IMPORTED_MODULE_0__circle__["a" /* default */])();
+// arc();
 // polyLine();
-Object(__WEBPACK_IMPORTED_MODULE_2__heatmap__["a" /* default */])();
+// heatmap();
 
 /***/ }),
 /* 38 */
@@ -1491,7 +1494,7 @@ Object(__WEBPACK_IMPORTED_MODULE_2__heatmap__["a" /* default */])();
 
 
 
-/* unused harmony default export */ var _unused_webpack_default_export = (function () {
+/* harmony default export */ __webpack_exports__["a"] = (function () {
     let nr = new __WEBPACK_IMPORTED_MODULE_3__src_nrenderer__["a" /* default */]({
         width: 300,
         height: 300
@@ -4442,7 +4445,7 @@ class Polyline extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
 
 
 
-/* harmony default export */ __webpack_exports__["a"] = (function () {
+/* unused harmony default export */ var _unused_webpack_default_export = (function () {
     let nr = new __WEBPACK_IMPORTED_MODULE_0__src_nrenderer__["a" /* default */]({
         width: 300,
         height: 300
@@ -4465,6 +4468,85 @@ class Polyline extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
     // nr.paint();
     __WEBPACK_IMPORTED_MODULE_1__src_io_nfs__["a" /* default */].saveAsPNG(nr.getCanvas(), './test/heatmap.png');
 });
+
+/***/ }),
+/* 93 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_graphic_shape_arc__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_nrenderer__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_io_nfs__ = __webpack_require__(23);
+
+
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = (function () {
+    let nr = new __WEBPACK_IMPORTED_MODULE_1__src_nrenderer__["a" /* default */]({
+        width: 300,
+        height: 300
+    });
+    nr.init();
+
+    let arc = new __WEBPACK_IMPORTED_MODULE_0__src_graphic_shape_arc__["a" /* default */]({
+        shape: {
+            cx: 100,
+            cy: 100,
+            r: 30,
+            startAngle: 0,
+            endAngle: Math.PI / 4
+        },
+        style: {
+            stroke: 'red',
+            lineWidth: 2,
+            fill: 'blue'
+        }
+    });
+
+    nr.add(arc);
+
+    nr.paint();
+    __WEBPACK_IMPORTED_MODULE_2__src_io_nfs__["a" /* default */].saveAsPNG(nr.getCanvas(), './test/test.png');
+});
+
+/***/ }),
+/* 94 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(13);
+
+
+/**
+ * @author yuanzhaokang <kangzhaoyuan@gmail.com>
+ * Arc shape.
+ */
+class Arc extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
+    constructor(opts) {
+        super(opts);
+        this.type = 'arc';
+
+        this.cx = opts.shape.cx || 150;
+        this.cy = opts.shape.cy || 75;
+        this.r = opts.shape.r || 5;
+        this.startAngle = opts.shape.startAngle || 0;
+        this.endAngle = opts.shape.endAngle || 0;
+        this.clockwise = opts.shape.clockwise || true;
+    }
+
+    buildPath(context) {
+        let { cx, cy, r, startAngle, endAngle, clockwise } = this;
+        var unitX = Math.cos(startAngle);
+        var unitY = Math.sin(startAngle);
+
+        // context.moveTo(unitX * r + cx, unitY * r + cy);
+        context.arc(cx, cy, r, startAngle, endAngle, !clockwise);
+        context.fill();
+        // context.stroke();
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Arc;
+
 
 /***/ })
 /******/ ]);
