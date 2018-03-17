@@ -102,7 +102,7 @@ module.exports = function isFunction(x) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var isType = __webpack_require__(4);
-var getFunctionName = __webpack_require__(15);
+var getFunctionName = __webpack_require__(16);
 
 module.exports = function getTypeName(constructor) {
   if (isType(constructor)) {
@@ -116,9 +116,9 @@ module.exports = function getTypeName(constructor) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var assert = __webpack_require__(0);
-var isString = __webpack_require__(14);
+var isString = __webpack_require__(15);
 var isFunction = __webpack_require__(1);
-var forbidNewOperator = __webpack_require__(12);
+var forbidNewOperator = __webpack_require__(13);
 
 module.exports = function irreducible(name, predicate) {
 
@@ -169,7 +169,7 @@ module.exports = function isType(x) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var isNil = __webpack_require__(7);
-var isString = __webpack_require__(14);
+var isString = __webpack_require__(15);
 
 module.exports = function isTypeName(name) {
   return isNil(name) || isString(name);
@@ -197,7 +197,7 @@ module.exports = function isNil(x) {
 
 var isType = __webpack_require__(4);
 var isStruct = __webpack_require__(33);
-var getFunctionName = __webpack_require__(15);
+var getFunctionName = __webpack_require__(16);
 var assert = __webpack_require__(0);
 var stringify = __webpack_require__(26);
 
@@ -266,17 +266,6 @@ module.exports = function isIdentity(type) {
 
 /***/ }),
 /* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var assert = __webpack_require__(0);
-var getTypeName = __webpack_require__(2);
-
-module.exports = function forbidNewOperator(x, type) {
-  assert(!(x instanceof type), function () { return 'Cannot use the new operator to instantiate the type ' + getTypeName(type); });
-};
-
-/***/ }),
-/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -290,51 +279,31 @@ class Shape {
     }
 
     buildPath(context) {}
+
+    hasStroke() {
+        return !!this.opts.style.strokeStyle;
+    }
+
+    hasFill() {
+        return !!this.opts.style.fillStyle;
+    }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Shape;
 
 
 /***/ }),
-/* 14 */
-/***/ (function(module, exports) {
-
-module.exports = function isString(x) {
-  return typeof x === 'string';
-};
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports) {
-
-module.exports = function getFunctionName(f) {
-  return f.displayName || f.name || '<function' + f.length + '>';
-};
-
-/***/ }),
-/* 16 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isNil = __webpack_require__(7);
 var assert = __webpack_require__(0);
+var getTypeName = __webpack_require__(2);
 
-// safe mixin, cannot override props unless specified
-module.exports = function mixin(target, source, overwrite) {
-  if (isNil(source)) { return target; }
-  for (var k in source) {
-    if (source.hasOwnProperty(k)) {
-      if (overwrite !== true) {
-        if (process.env.NODE_ENV !== 'production') {
-          assert(!target.hasOwnProperty(k), function () { return 'Invalid call to mixin(target, source, [overwrite]): cannot overwrite property "' + k + '" of target object'; });
-        }
-      }
-      target[k] = source[k];
-    }
-  }
-  return target;
+module.exports = function forbidNewOperator(x, type) {
+  assert(!(x instanceof type), function () { return 'Cannot use the new operator to instantiate the type ' + getTypeName(type); });
 };
 
 /***/ }),
-/* 17 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -462,52 +431,50 @@ class NRenderer {
 
 
 /***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+module.exports = function isString(x) {
+  return typeof x === 'string';
+};
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+module.exports = function getFunctionName(f) {
+  return f.displayName || f.name || '<function' + f.length + '>';
+};
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isNil = __webpack_require__(7);
+var assert = __webpack_require__(0);
+
+// safe mixin, cannot override props unless specified
+module.exports = function mixin(target, source, overwrite) {
+  if (isNil(source)) { return target; }
+  for (var k in source) {
+    if (source.hasOwnProperty(k)) {
+      if (overwrite !== true) {
+        if (process.env.NODE_ENV !== 'production') {
+          assert(!target.hasOwnProperty(k), function () { return 'Invalid call to mixin(target, source, [overwrite]): cannot overwrite property "' + k + '" of target object'; });
+        }
+      }
+      target[k] = source[k];
+    }
+  }
+  return target;
+};
+
+/***/ }),
 /* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(46);
-
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var irreducible = __webpack_require__(3);
-
-module.exports = irreducible('Any', function () { return true; });
-
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var irreducible = __webpack_require__(3);
-var isFunction = __webpack_require__(1);
-
-module.exports = irreducible('Function', isFunction);
-
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports) {
-
-module.exports = require("stream");
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports) {
-
-module.exports = require("fs");
-
-/***/ }),
-/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fs__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fs__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_fs__);
 
 
@@ -536,6 +503,47 @@ class Nfs {
 
 
 /***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(46);
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var irreducible = __webpack_require__(3);
+
+module.exports = irreducible('Any', function () { return true; });
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var irreducible = __webpack_require__(3);
+var isFunction = __webpack_require__(1);
+
+module.exports = irreducible('Function', isFunction);
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+module.exports = require("stream");
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+module.exports = require("fs");
+
+/***/ }),
 /* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -552,7 +560,7 @@ class Nfs {
  * Module dependencies.
  */
 
-var canvas = __webpack_require__(18)
+var canvas = __webpack_require__(19)
   , Context2d = canvas.CanvasRenderingContext2d
   , CanvasGradient = canvas.CanvasGradient
   , CanvasPattern = canvas.CanvasPattern
@@ -924,12 +932,12 @@ Context2d.prototype.createImageData = function(width, height){
 var t = __webpack_require__(0);
 
 // types
-t.Any = __webpack_require__(19);
+t.Any = __webpack_require__(20);
 t.Array = __webpack_require__(50);
 t.Boolean = __webpack_require__(27);
 t.Date = __webpack_require__(51);
 t.Error = __webpack_require__(52);
-t.Function = __webpack_require__(20);
+t.Function = __webpack_require__(21);
 t.Nil = __webpack_require__(29);
 t.Number = __webpack_require__(53);
 t.Object = __webpack_require__(54);
@@ -965,7 +973,7 @@ t.subtype = t.refinement;
 // functions
 t.assert = t;
 t.update = __webpack_require__(66);
-t.mixin = __webpack_require__(16);
+t.mixin = __webpack_require__(17);
 t.isType = __webpack_require__(4);
 t.is = __webpack_require__(9);
 t.getTypeName = __webpack_require__(2);
@@ -1028,7 +1036,7 @@ module.exports = function isNumber(x) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var irreducible = __webpack_require__(3);
-var isString = __webpack_require__(14);
+var isString = __webpack_require__(15);
 
 module.exports = irreducible('String', isString);
 
@@ -1486,8 +1494,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__circle__["a" /* default */])();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_graphic_shape_circle__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_graphic_shape_rect__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_graphic_shape_line__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_nrenderer__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_io_nfs__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_nrenderer__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_io_nfs__ = __webpack_require__(18);
 
 
 
@@ -1575,7 +1583,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__circle__["a" /* default */])();
     // nr.add(line);
 
     nr.paint();
-    __WEBPACK_IMPORTED_MODULE_4__src_io_nfs__["a" /* default */].saveAsPNG(nr.getCanvas(), './test/test.png');
+    __WEBPACK_IMPORTED_MODULE_4__src_io_nfs__["a" /* default */].saveAsPNG(nr.getCanvas(), './test/circle.png');
 });
 
 /***/ }),
@@ -1583,7 +1591,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__circle__["a" /* default */])();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(12);
 
 
 /**
@@ -1603,8 +1611,8 @@ class Circle extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
     buildPath(context) {
         let { cx, cy, r } = this;
         context.arc(cx, cy, r, 0, 2 * Math.PI, true);
-        context.fill();
-        context.stroke();
+        // context.fill();
+        // context.stroke();
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Circle;
@@ -1615,7 +1623,7 @@ class Circle extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(12);
 
 
 /**
@@ -1634,8 +1642,8 @@ class Rect extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
     buildPath(context) {
         let { x, y, width, height } = this;
         context.rect(x, y, width, height);
-        context.fill();
-        context.stroke();
+        // context.fill();
+        // context.stroke();
     }
 }
 /* unused harmony export default */
@@ -1646,7 +1654,7 @@ class Rect extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(12);
 
 
 /**
@@ -1766,6 +1774,9 @@ class Painter {
         style.bind(this.context); // bind style to context.
         this.context.beginPath();
         shape.buildPath(this.context); // paint base shape.
+        shape.hasStroke() && this.context.stroke();
+        shape.hasFill() && this.context.fill();
+
         this.context.closePath();
     }
 
@@ -1864,7 +1875,7 @@ class Style {
  * Module dependencies.
  */
 
-var canvas = __webpack_require__(18)
+var canvas = __webpack_require__(19)
   , Canvas = canvas.Canvas
   , Image = canvas.Image
   , cairoVersion = canvas.cairoVersion
@@ -1873,7 +1884,7 @@ var canvas = __webpack_require__(18)
   , PDFStream = __webpack_require__(86)
   , JPEGStream = __webpack_require__(87)
   , FontFace = canvas.FontFace
-  , fs = __webpack_require__(22)
+  , fs = __webpack_require__(23)
   , packageJson = __webpack_require__(88)
   , FORMATS = ['image/png', 'image/jpeg'];
 
@@ -2176,7 +2187,7 @@ Canvas.prototype.toDataURL = function(a1, a2, a3){
 /* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {try {global.process.dlopen(module, "/home/yuan/Desktop/NRenderer/node_modules/canvas/build/Release/canvas.node"); } catch(e) {throw new Error('Cannot open ' + "/home/yuan/Desktop/NRenderer/node_modules/canvas/build/Release/canvas.node" + ': ' + e);}
+/* WEBPACK VAR INJECTION */(function(module) {try {global.process.dlopen(module, "/Users/yuanzhaokang/Desktop/NRenderer/node_modules/.1.6.5@canvas/build/Release/canvas.node"); } catch(e) {throw new Error('Cannot open ' + "/Users/yuanzhaokang/Desktop/NRenderer/node_modules/.1.6.5@canvas/build/Release/canvas.node" + ': ' + e);}
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(47)(module)))
 
 /***/ }),
@@ -2407,7 +2418,7 @@ var assert = __webpack_require__(0);
 var isTypeName = __webpack_require__(5);
 var isType = __webpack_require__(4);
 var isNil = __webpack_require__(7);
-var mixin = __webpack_require__(16);
+var mixin = __webpack_require__(17);
 var getTypeName = __webpack_require__(2);
 
 // All the .declare-d types should be clearly different from each other thus they should have
@@ -2461,8 +2472,8 @@ module.exports = function declare(name) {
 
 var assert = __webpack_require__(0);
 var isTypeName = __webpack_require__(5);
-var forbidNewOperator = __webpack_require__(12);
-var isString = __webpack_require__(14);
+var forbidNewOperator = __webpack_require__(13);
+var isString = __webpack_require__(15);
 var isObject = __webpack_require__(10);
 
 function getDefaultName(map) {
@@ -2528,10 +2539,10 @@ var isTypeName = __webpack_require__(5);
 var isFunction = __webpack_require__(1);
 var isMaybe = __webpack_require__(59);
 var isIdentity = __webpack_require__(11);
-var Any = __webpack_require__(19);
+var Any = __webpack_require__(20);
 var create = __webpack_require__(8);
 var Nil = __webpack_require__(29);
-var forbidNewOperator = __webpack_require__(12);
+var forbidNewOperator = __webpack_require__(13);
 var is = __webpack_require__(9);
 var getTypeName = __webpack_require__(2);
 
@@ -2596,12 +2607,12 @@ module.exports = function isMaybe(x) {
 var assert = __webpack_require__(0);
 var isTypeName = __webpack_require__(5);
 var isFunction = __webpack_require__(1);
-var forbidNewOperator = __webpack_require__(12);
+var forbidNewOperator = __webpack_require__(13);
 var isIdentity = __webpack_require__(11);
 var create = __webpack_require__(8);
 var is = __webpack_require__(9);
 var getTypeName = __webpack_require__(2);
-var getFunctionName = __webpack_require__(15);
+var getFunctionName = __webpack_require__(16);
 
 function getDefaultName(type, predicate) {
   return '{' + getTypeName(type) + ' | ' + getFunctionName(predicate) + '}';
@@ -2666,11 +2677,11 @@ module.exports = refinement;
 var assert = __webpack_require__(0);
 var isTypeName = __webpack_require__(5);
 var String = __webpack_require__(31);
-var Function = __webpack_require__(20);
+var Function = __webpack_require__(21);
 var isArray = __webpack_require__(6);
 var isObject = __webpack_require__(10);
 var create = __webpack_require__(8);
-var mixin = __webpack_require__(16);
+var mixin = __webpack_require__(17);
 var isStruct = __webpack_require__(33);
 var getTypeName = __webpack_require__(2);
 var dict = __webpack_require__(32);
@@ -2782,7 +2793,7 @@ var isIdentity = __webpack_require__(11);
 var isArray = __webpack_require__(6);
 var create = __webpack_require__(8);
 var is = __webpack_require__(9);
-var forbidNewOperator = __webpack_require__(12);
+var forbidNewOperator = __webpack_require__(13);
 var isType = __webpack_require__(4);
 var isUnion = __webpack_require__(63);
 var isNil = __webpack_require__(7);
@@ -2882,7 +2893,7 @@ module.exports = function isUnion(x) {
 
 var assert = __webpack_require__(0);
 var isTypeName = __webpack_require__(5);
-var FunctionType = __webpack_require__(20);
+var FunctionType = __webpack_require__(21);
 var isArray = __webpack_require__(6);
 var list = __webpack_require__(34);
 var isObject = __webpack_require__(10);
@@ -2890,7 +2901,7 @@ var create = __webpack_require__(8);
 var isNil = __webpack_require__(7);
 var isBoolean = __webpack_require__(28);
 var tuple = __webpack_require__(35);
-var getFunctionName = __webpack_require__(15);
+var getFunctionName = __webpack_require__(16);
 var getTypeName = __webpack_require__(2);
 
 function getDefaultName(domain, codomain) {
@@ -3067,7 +3078,7 @@ var isObject = __webpack_require__(10);
 var isFunction = __webpack_require__(1);
 var isArray = __webpack_require__(6);
 var isNumber = __webpack_require__(30);
-var mixin = __webpack_require__(16);
+var mixin = __webpack_require__(17);
 
 function getShallowCopy(x) {
   if (isArray(x)) {
@@ -3195,7 +3206,7 @@ module.exports = update;
 var assert = __webpack_require__(0);
 var isFunction = __webpack_require__(1);
 var isType = __webpack_require__(4);
-var Any = __webpack_require__(19);
+var Any = __webpack_require__(20);
 
 module.exports = function match(x) {
   var type, guard, f, count;
@@ -4007,7 +4018,7 @@ if (true) {
  * Module dependencies.
  */
 
-var Stream = __webpack_require__(21).Stream;
+var Stream = __webpack_require__(22).Stream;
 
 /**
  * Initialize a `PNGStream` with the given `canvas`.
@@ -4073,7 +4084,7 @@ PNGStream.prototype.__proto__ = Stream.prototype;
  * Module dependencies.
  */
 
-var Stream = __webpack_require__(21).Stream;
+var Stream = __webpack_require__(22).Stream;
 
 /**
  * Initialize a `PDFStream` with the given `canvas`.
@@ -4141,7 +4152,7 @@ PDFStream.prototype.__proto__ = Stream.prototype;
  * Module dependencies.
  */
 
-var Stream = __webpack_require__(21).Stream;
+var Stream = __webpack_require__(22).Stream;
 
 /**
  * Initialize a `JPEGStream` with the given `canvas`.
@@ -4198,73 +4209,15 @@ JPEGStream.prototype.__proto__ = Stream.prototype;
 /***/ (function(module, exports) {
 
 module.exports = {
-	"_args": [
-		[
-			"canvas@1.6.5",
-			"/home/yuan/Desktop/NRenderer"
-		]
-	],
-	"_from": "canvas@1.6.5",
-	"_id": "canvas@1.6.5",
-	"_inBundle": false,
-	"_integrity": "sha1-VX+ZiPXSyV/cJHxhpe5D3lL2cXw=",
-	"_location": "/canvas",
-	"_phantomChildren": {},
-	"_requested": {
-		"type": "version",
-		"registry": true,
-		"raw": "canvas@1.6.5",
-		"name": "canvas",
-		"escapedName": "canvas",
-		"rawSpec": "1.6.5",
-		"saveSpec": null,
-		"fetchSpec": "1.6.5"
-	},
-	"_requiredBy": [
-		"#DEV:/"
-	],
-	"_resolved": "https://registry.npmjs.org/canvas/-/canvas-1.6.5.tgz",
-	"_spec": "1.6.5",
-	"_where": "/home/yuan/Desktop/NRenderer",
-	"author": {
-		"name": "TJ Holowaychuk",
-		"email": "tj@learnboost.com"
-	},
-	"bugs": {
-		"url": "https://github.com/Automattic/node-canvas/issues"
-	},
-	"contributors": [
-		{
-			"name": "Nathan Rajlich",
-			"email": "nathan@tootallnate.net"
-		},
-		{
-			"name": "Rod Vagg",
-			"email": "r@va.gg"
-		},
-		{
-			"name": "Juriy Zaytsev",
-			"email": "kangax@gmail.com"
-		}
-	],
-	"dependencies": {
-		"nan": "^2.4.0",
-		"parse-css-font": "^2.0.2",
-		"units-css": "^0.4.0"
-	},
+	"name": "canvas",
 	"description": "Canvas graphics API backed by Cairo",
-	"devDependencies": {
-		"body-parser": "^1.13.3",
-		"express": "^4.13.2",
-		"mocha": "*",
-		"pug": "^2.0.0-beta3",
-		"standard": "^7.1.1"
-	},
-	"engines": {
-		"node": ">=0.8.0"
-	},
-	"gypfile": true,
-	"homepage": "https://github.com/Automattic/node-canvas",
+	"version": "1.6.5",
+	"author": "TJ Holowaychuk <tj@learnboost.com>",
+	"contributors": [
+		"Nathan Rajlich <nathan@tootallnate.net>",
+		"Rod Vagg <r@va.gg>",
+		"Juriy Zaytsev <kangax@gmail.com>"
+	],
 	"keywords": [
 		"canvas",
 		"graphic",
@@ -4275,23 +4228,35 @@ module.exports = {
 		"images",
 		"pdf"
 	],
-	"license": "MIT",
-	"main": "./lib/canvas.js",
-	"name": "canvas",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/Automattic/node-canvas.git"
-	},
+	"homepage": "https://github.com/Automattic/node-canvas",
+	"repository": "git://github.com/Automattic/node-canvas.git",
 	"scripts": {
-		"benchmark": "node benchmarks/run.js",
-		"install": "node-gyp rebuild",
 		"prebenchmark": "node-gyp build",
+		"benchmark": "node benchmarks/run.js",
 		"pretest": "node-gyp build",
-		"pretest-server": "node-gyp build",
 		"test": "standard examples/*.js && mocha test/*.test.js",
+		"pretest-server": "node-gyp build",
 		"test-server": "node test/server.js"
 	},
-	"version": "1.6.5"
+	"dependencies": {
+		"nan": "^2.4.0",
+		"parse-css-font": "^2.0.2",
+		"units-css": "^0.4.0"
+	},
+	"devDependencies": {
+		"body-parser": "^1.13.3",
+		"express": "^4.13.2",
+		"pug": "^2.0.0-beta3",
+		"mocha": "*",
+		"standard": "^7.1.1"
+	},
+	"engines": {
+		"node": ">=0.8.0"
+	},
+	"main": "./lib/canvas.js",
+	"license": "MIT",
+	"_from": "canvas@1.6.5",
+	"_resolved": "http://registry.npm.taobao.org/canvas/download/canvas-1.6.5.tgz"
 };
 
 /***/ }),
@@ -4311,7 +4276,7 @@ module.exports = {
  * Module dependencies.
  */
 
-var Canvas = __webpack_require__(18)
+var Canvas = __webpack_require__(19)
   , Image = Canvas.Image;
 
 /**
@@ -4368,8 +4333,8 @@ Image.prototype.inspect = function(){
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_graphic_shape_polyline__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_nrenderer__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_io_nfs__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_nrenderer__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_io_nfs__ = __webpack_require__(18);
 
 
 
@@ -4393,7 +4358,7 @@ Image.prototype.inspect = function(){
 
     nr.add(polyLine);
     nr.paint();
-    __WEBPACK_IMPORTED_MODULE_2__src_io_nfs__["a" /* default */].saveAsPNG(nr.getCanvas(), './test/test.png');
+    __WEBPACK_IMPORTED_MODULE_2__src_io_nfs__["a" /* default */].saveAsPNG(nr.getCanvas(), './test/polyline.png');
 });
 
 /***/ }),
@@ -4401,7 +4366,7 @@ Image.prototype.inspect = function(){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(12);
 
 
 /**
@@ -4424,7 +4389,7 @@ class Polyline extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
             context.lineTo(this.points[i][0], this.points[i][1]);
         }
 
-        context.stroke();
+        // context.stroke();
         context.closePath();
     }
 }
@@ -4436,9 +4401,9 @@ class Polyline extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_nrenderer__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_io_nfs__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_fs__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_nrenderer__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_io_nfs__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_fs__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_fs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_fs__);
 // import Polyline from '../src/graphic/shape/polyline';
 
@@ -4475,8 +4440,8 @@ class Polyline extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_graphic_shape_arc__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_nrenderer__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_io_nfs__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_nrenderer__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_io_nfs__ = __webpack_require__(18);
 
 
 
@@ -4494,19 +4459,19 @@ class Polyline extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
             cy: 100,
             r: 30,
             startAngle: 0,
-            endAngle: Math.PI / 4
+            endAngle: Math.PI / 2
         },
         style: {
-            stroke: 'red',
+            strokeStyle: 'red',
             lineWidth: 2,
-            fill: 'blue'
+            fillStyle: 'blue'
         }
     });
 
     nr.add(arc);
 
     nr.paint();
-    __WEBPACK_IMPORTED_MODULE_2__src_io_nfs__["a" /* default */].saveAsPNG(nr.getCanvas(), './test/test.png');
+    __WEBPACK_IMPORTED_MODULE_2__src_io_nfs__["a" /* default */].saveAsPNG(nr.getCanvas(), './test/arc.png');
 });
 
 /***/ }),
@@ -4514,7 +4479,7 @@ class Polyline extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shape__ = __webpack_require__(12);
 
 
 /**
@@ -4541,8 +4506,6 @@ class Arc extends __WEBPACK_IMPORTED_MODULE_0__shape__["a" /* default */] {
 
         // context.moveTo(unitX * r + cx, unitY * r + cy);
         context.arc(cx, cy, r, startAngle, endAngle, !clockwise);
-        context.fill();
-        // context.stroke();
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Arc;

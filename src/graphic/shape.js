@@ -10,4 +10,12 @@ export default class Shape {
     buildPath(context) {
 
     }
+
+    hasStroke() {
+    	return !!this.opts.style.strokeStyle;
+    }
+
+    hasFill() {
+    	return !!this.opts.style.fillStyle;
+    }
 }

@@ -16,7 +16,7 @@ export default class Rect extends Shape {
     buildPath(context) {
         let { x, y, width, height } = this;
         context.rect(x, y, width, height);
-        context.fill();
-        context.stroke();
+        // context.fill();
+        // context.stroke();
     }
 }

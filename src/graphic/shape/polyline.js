@@ -20,7 +20,7 @@ export default class Polyline extends Shape {
             context.lineTo(this.points[i][0], this.points[i][1]);
         }
 
-        context.stroke();
+        // context.stroke();
         context.closePath();
     }
 }

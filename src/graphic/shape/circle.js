@@ -17,7 +17,7 @@ export default class Circle extends Shape {
     buildPath(context) {
         let { cx, cy, r } = this;
         context.arc(cx, cy, r, 0, 2 * Math.PI, true);
-        context.fill();
-        context.stroke();
+        // context.fill();
+        // context.stroke();
     }
 }

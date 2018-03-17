@@ -15,17 +15,17 @@ export default function () {
             cy:100,
             r:30,
             startAngle: 0,
-            endAngle: Math.PI / 4
+            endAngle: Math.PI / 2
         },
         style: {
-            stroke: 'red',
+            strokeStyle: 'red',
             lineWidth: 2,
-            fill: 'blue'
+            fillStyle: 'blue'
         }
     });
 
     nr.add(arc);
 
     nr.paint();
-    Nfs.saveAsPNG(nr.getCanvas(), './test/test.png');
+    Nfs.saveAsPNG(nr.getCanvas(), './test/arc.png');
 }

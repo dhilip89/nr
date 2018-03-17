@@ -24,6 +24,9 @@ export default class Painter {
         style.bind(this.context); // bind style to context.
         this.context.beginPath();
         shape.buildPath(this.context); // paint base shape.
+        shape.hasStroke() && this.context.stroke();
+        shape.hasFill() && this.context.fill();
+
         this.context.closePath();
     }
 

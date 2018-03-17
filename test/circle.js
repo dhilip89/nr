@@ -85,5 +85,5 @@ export default function () {
     // nr.add(line);
 
     nr.paint();
-    Nfs.saveAsPNG(nr.getCanvas(), './test/test.png');
+    Nfs.saveAsPNG(nr.getCanvas(), './test/circle.png');
 }

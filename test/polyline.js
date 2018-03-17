@@ -27,5 +27,5 @@ export default function () {
 
     nr.add(polyLine);
     nr.paint();
-    Nfs.saveAsPNG(nr.getCanvas(), './test/test.png');
+    Nfs.saveAsPNG(nr.getCanvas(), './test/polyline.png');
 }

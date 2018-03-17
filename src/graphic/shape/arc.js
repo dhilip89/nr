@@ -24,7 +24,5 @@ export default class Arc extends Shape {
 
         // context.moveTo(unitX * r + cx, unitY * r + cy);
         context.arc(cx, cy, r, startAngle, endAngle, !clockwise);
-        context.fill();
-        // context.stroke();
     }
 }
