@@ -1,6 +1,6 @@
-import Arc from '../src/graphic/shape/arc';
-import NRenderer from '../src/nrenderer';
-import Nfs from '../src/io/nfs';
+import Arc from '../../src/graphic/shape/arc';
+import NRenderer from '../../src/nrenderer';
+import Nfs from '../../src/io/nfs';
 
 export default function () {
     let nr = new NRenderer({
@@ -20,12 +20,12 @@ export default function () {
         style: {
             strokeStyle: 'red',
             lineWidth: 2,
-            fillStyle: 'blue'
+            // fillStyle: 'blue'
         }
     });
 
     nr.add(arc);
 
     nr.paint();
-    Nfs.saveAsPNG(nr.getCanvas(), './test/arc.png');
+    Nfs.saveAsPNG(nr.getCanvas(), './test/arc/arc.png');
 }

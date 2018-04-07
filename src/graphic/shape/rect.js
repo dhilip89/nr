@@ -6,7 +6,8 @@ import Shape from '../shape';
  */
 export default class Rect extends Shape {
     constructor(opts) {
-        super(opts);
+        super(...arguments);
+        this.type = "Rect";
         this.x = opts.shape.x || 0;
         this.y = opts.shape.y || 0;
         this.width = opts.shape.width || 150;
@@ -16,7 +17,5 @@ export default class Rect extends Shape {
     buildPath(context) {
         let { x, y, width, height } = this;
         context.rect(x, y, width, height);
-        // context.fill();
-        // context.stroke();
     }
 }

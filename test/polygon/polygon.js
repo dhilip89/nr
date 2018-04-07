@@ -1,6 +1,6 @@
-import Polyline from '../src/graphic/shape/polyline';
-import NRenderer from '../src/nrenderer';
-import Nfs from '../src/io/nfs';
+import Polygon from '../../src/graphic/shape/polygon';
+import NRenderer from '../../src/nrenderer';
+import Nfs from '../../src/io/nfs';
 
 export default function () {
     let nr = new NRenderer({
@@ -9,7 +9,7 @@ export default function () {
     });
     nr.init();
 
-    let polyLine = new Polyline({
+    let polygon = new Polygon({
         shape: {
             points: [
                 [10, 10],
@@ -25,7 +25,7 @@ export default function () {
         }
     });
 
-    nr.add(polyLine);
+    nr.add(polygon);
     nr.paint();
-    Nfs.saveAsPNG(nr.getCanvas(), './test/polyline.png');
+    Nfs.saveAsPNG(nr.getCanvas(), './test/polygon/polygon.png');
 }

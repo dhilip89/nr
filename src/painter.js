@@ -22,12 +22,10 @@ export default class Painter {
         let shapeStyle = shape.opts.style;
         let style = new Style(shapeStyle);
         style.bind(this.context); // bind style to context.
-        this.context.beginPath();
+
         shape.buildPath(this.context); // paint base shape.
         shape.hasStroke() && this.context.stroke();
         shape.hasFill() && this.context.fill();
-
-        this.context.closePath();
     }
 
     /**

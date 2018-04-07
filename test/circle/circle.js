@@ -1,8 +1,8 @@
-import Circle from '../src/graphic/shape/circle';
-import Rect from '../src/graphic/shape/rect';
-import Line from '../src/graphic/shape/line';
-import NRenderer from '../src/nrenderer';
-import Nfs from '../src/io/nfs';
+import Circle from '../../src/graphic/shape/circle';
+import Rect from '../../src/graphic/shape/rect';
+import Line from '../../src/graphic/shape/line';
+import NRenderer from '../../src/nrenderer';
+import Nfs from '../../src/io/nfs';
 
 export default function () {
     let nr = new NRenderer({
@@ -56,34 +56,6 @@ export default function () {
 
     nr.add(c);
 
-    // let rect = new Rect({
-    //     shape: {
-    //         x: 100,
-    //         y: 100,
-    //         width: 100,
-    //         height: 100
-    //     },
-    //     style: {
-    //         fillStyle: 'red',
-    //         // strokeStyle: 'rgba()'
-    //     }
-    // });
-    // nr.add(rect);
-
-    // let line = new Line({
-    //     shape: {
-    //         x1: 10,
-    //         y1: 10,
-    //         x2: 120,
-    //         y2: 50
-    //     },
-    //     style: {
-    //         strokeStyle: 'yellow',
-    //         lineWidth: 2
-    //     }
-    // });
-    // nr.add(line);
-
     nr.paint();
-    Nfs.saveAsPNG(nr.getCanvas(), './test/circle.png');
+    Nfs.saveAsPNG(nr.getCanvas(), './test/circle/circle.png');
 }

@@ -1,6 +1,6 @@
 // import Polyline from '../src/graphic/shape/polyline';
-import NRenderer from '../src/nrenderer';
-import Nfs from '../src/io/nfs';
+import NRenderer from '../../src/nrenderer';
+import Nfs from '../../src/io/nfs';
 import fs from 'fs';
 
 export default function () {
